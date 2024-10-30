@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Stage - Dan Bitton</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="../index.html#about">À propos</a></li>
+      <li><a href="../index.html#projects">Projets</a></li>
+      <li><a href="stage.html">Stage</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <h1>Mon Stage</h1>
+</header>
+
+<section id="stage">
+  <h2>Synthèse de mon stage</h2>
+
+  <h3>Présentation de l'entreprise RIVP</h3>
+  <p><strong>Nom et domaine d’activité :</strong> La Régie Immobilière de la Ville de Paris (RIVP) est une entreprise publique spécialisée dans le secteur de l'immobilier, plus précisément dans la gestion et la construction de logements sociaux et intermédiaires. Elle œuvre principalement pour la Ville de Paris, contribuant à la politique publique du logement en offrant des habitations accessibles aux Parisiens.</p>
+
+  <p><strong>Type d’entreprise (forme juridique) :</strong> La RIVP est une société anonyme (SA) à capitaux publics, dont la majorité du capital est détenue par la Ville de Paris. Son statut de société anonyme lui confère une structure juridique de droit privé, bien que son actionnariat et ses missions soient orientés vers le service public.</p>
+
+  <p><strong>Service informatique :</strong> Le Service Informatique de la RIVP est un département clé qui soutient l'ensemble des activités de l'entreprise en fournissant les outils technologiques nécessaires à son fonctionnement efficace. Ce service joue un rôle crucial dans la gestion des systèmes d'information, le support technique, et l'innovation numérique au sein de l'entreprise.</p>
+
+  <h3>1. Refactoring du code PHP et migration vers PHP 8.3</h3>
+  <p><strong>Nettoyage et optimisation du code :</strong></p>
+  <ul>
+    <li>J'ai passé en revue l'intégralité du code existant, initialement développé en PHP 7, pour le rendre plus clair, simple et précis. Cela impliquait de refactorer les fonctions complexes, d'éliminer les redondances, et d'améliorer la lisibilité du code en adoptant les meilleures pratiques de codage.</li>
+    <li>J'ai aussi restructuré le code pour s'assurer qu'il soit conforme aux standards de codage modernes, en utilisant des conventions de nommage cohérentes.</li>
+  </ul>
+  <p><strong>Migration de PHP 7 vers PHP 8.3 :</strong></p>
+  <ul>
+    <li>Afin de mieux sécuriser l'application et de tirer parti des nouvelles fonctionnalités, j'ai migré le code PHP vers la version 8.3. Cela a impliqué la mise à jour de diverses syntaxes obsolètes et l'implémentation de nouvelles fonctionnalités, telles que les types de retour dans les fonctions, les propriétés typées, et l'utilisation des expressions match.</li>
+    <li>J'ai aussi vérifié la compatibilité de l'application avec PHP 8.3, en effectuant des tests exhaustifs pour m'assurer que tout fonctionnait correctement après la migration.</li>
+  </ul>
+
+  <h3>2. Création d'une page web pour le suivi des nouveautés de l'application</h3>
+  <p><strong>Développement en HTML/CSS et PHP :</strong></p>
+  <ul>
+    <li>J'ai développé une page web dédiée qui permet de visualiser les nouveautés et modifications apportées à l'application. Cette page affiche les mises à jour récentes, les nouvelles fonctionnalités, les corrections de bugs, et toute autre modification pertinente.</li>
+    <li>L'interface a été conçue de manière intuitive pour permettre aux utilisateurs internes de facilement consulter les informations sur les dernières mises à jour.</li>
+  </ul>
+  <p><strong>Gestion dynamique des mises à jour :</strong></p>
+  <ul>
+    <li>J'ai intégré un système de gestion dynamique des contenus, où les informations sur les nouveautés peuvent être ajoutées ou modifiées via une interface d'administration. Cela permet à l'équipe technique de mettre à jour la page sans avoir à modifier le code source directement.</li>
+  </ul>
+
+  <h3>3. Intégration de la base de données pour le suivi des documents envoyés</h3>
+  <p><strong>Connexion de la base de données à la page web :</strong></p>
+  <ul>
+    <li>J'ai relié la base de données existante à une nouvelle page web qui permet de suivre quels documents ont été envoyés dans les boîtes de réception des clients. Cette fonctionnalité est essentielle pour le suivi des interactions clients et pour garantir qu'aucun document n'est perdu ou oublié.</li>
+    <li>La page affiche en temps réel l'état des envois, en indiquant clairement si un document a été envoyé, reçu ou s'il est en attente.</li>
+  </ul>
+
+  <h3>4. Création de deux formulaires distincts pour le suivi des clients RIVP et HSF</h3>
+  <p><strong>Formulaires différenciés pour RIVP et HSF :</strong></p>
+  <ul>
+    <li>Étant donné la collaboration entre la RIVP et HSF, j'ai créé deux formulaires distincts pour gérer les documents envoyés aux clients. Un formulaire est dédié aux clients de la RIVP, tandis que l'autre est destiné aux clients d'HSF.</li>
+    <li>Ces formulaires permettent de trier et de gérer les documents en fonction de l'entreprise concernée, assurant ainsi un suivi précis et une gestion efficace des communications avec les clients.</li>
+  </ul>
+
+  <h3>5. Développement d'une API REST privée pour le suivi des dossiers</h3>
+  <p><strong>Conception et développement de l'API :</strong></p>
+  <ul>
+    <li>J'ai développé une API REST privée destinée à l'usage interne, permettant aux employés de la RIVP d'accéder à la base de données pour le suivi des dossiers clients.</li>
+    <li>L'API permet d'effectuer des opérations CRUD (Create, Read, Update, Delete) sur les dossiers, facilitant ainsi la gestion et le suivi des documents et des interactions avec les clients.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
+</footer>
+
+<script src="../index.js"></script>
+</body>
+</html>
