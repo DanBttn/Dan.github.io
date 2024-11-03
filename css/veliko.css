@@ -1,0 +1,217 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Corps de la page */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Titre principal */
+h1 {
+    color: #35424a;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Barre de navigation */
+nav {
+    background-color: #35424a;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* Section Introduction */
+section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 28px;
+    color: #35424a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #35424a;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Pied de page */
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer .contact-info {
+    margin-top: 15px;
+}
+
+footer .contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+footer .contact-info p, footer .contact-info a {
+    font-size: 16px;
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+footer .contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Section Outils et Langages Utilisés */
+.skills {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espace entre les éléments */
+    padding: 20px 0;
+}
+
+.skill {
+    background-color: #f0f0f0; /* Fond léger pour les cartes de compétence */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 120px; /* Largeur fixe pour uniformité */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px); /* Effet de levée au survol */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill img {
+    width: 60px; /* Taille des logos */
+    height: 60px;
+    object-fit: contain; /* Assure que l'image reste bien proportionnée */
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+/* Animation Slide-In */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.skill:nth-child(1) .slide-in {
+    animation-delay: 0.1s;
+}
+
+.skill:nth-child(2) .slide-in {
+    animation-delay: 0.2s;
+}
+
+.skill:nth-child(3) .slide-in {
+    animation-delay: 0.3s;
+}
+
+.skill:nth-child(4) .slide-in {
+    animation-delay: 0.4s;
+}
+
+.skill:nth-child(5) .slide-in {
+    animation-delay: 0.5s;
+}
+
+.skill:nth-child(6) .slide-in {
+    animation-delay: 0.6s;
+}
+
+.skill:nth-child(7) .slide-in {
+    animation-delay: 0.7s;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .skill {
+        width: 100px;
+    }
+
+    .skill img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .skill p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        width: 80%;
+    }
+}

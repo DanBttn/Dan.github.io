@@ -37,3 +37,12 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const skills = document.querySelectorAll('.skill');
+    skills.forEach((skill, index) => {
+        // Utiliser un délai pour l'animation afin qu'elle ne se déclenche pas en même temps
+        setTimeout(() => {
+            skill.classList.add('slide-in');
+        }, index * 150); // Délai croissant pour chaque élément
+    });
+});

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio de Dan Bitton</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <header>
@@ -14,8 +14,9 @@
     <ul id="nav-menu">
       <li><a href="#about">À propos</a></li>
       <li><a href="#bts">BTS SIO</a></li>
-      <li><a href="#projects">Projets</a></li>
+      <li><a href="#compétence">Compétences</a></li>
       <li><a href="stage/stage.html">Stage</a></li>
+      <li><a href="#projects">Projets</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -29,45 +30,63 @@
     <br>
 
   <a href="Pdf/Cv%20Dan.pdf"  class="btn btn-primary">Mon Cv</a>
+</section>
 
-  <br>
-
-  <br>
-
-  <h3>Mes compétences</h3>
-  <div class="skills">
-    <div class="skill slide-in">
-      <img src="images/java.png" alt="Java Logo">
-      <p>Java</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/php.png" alt="PHP Logo">
-      <p>PHP</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/css.png" alt="CSS Logo">
-      <p>CSS</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/html.png" alt="HTML Logo">
-      <p>HTML</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/javaScript.png" alt="JavaScript Logo">
-      <p>JavaScript</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/github.png" alt="GitHub Logo">
-      <p>GitHub</p>
-    </div>
-    <div class="skill slide-in">
-      <img src="images/symfony.png" alt="Symfony Logo">
-      <p>Symfony</p>
+<section id="compétence">
+  <div class="container">
+    <h3>Mes outils</h3>
+    <div class="outils">
+      <div class="skill slide-in">
+        <img src="images/github.png" alt="GitHub Logo">
+        <p>GitHub</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/symfony.png" alt="Symfony Logo">
+        <p>Symfony</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/docker.png" alt="Docker logo">
+        <p>Docker</p>
+      </div>
+        <div class="skill slide-in">
+            <img src="images/Vscode.png" alt="Visual Studio Logo">
+            <p>Visual Studio</p>
     </div>
   </div>
 </section>
-<br>
-<br>
+
+<section>
+  <div class="container">
+    <h3>Langages</h3>
+    <div class="langage">
+      <div class="skill slide-in">
+        <img src="images/java.png" alt="Java Logo">
+        <p>Java</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/php.png" alt="PHP Logo">
+        <p>PHP</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/css.png" alt="CSS Logo">
+        <p>CSS</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/html.png" alt="HTML Logo">
+        <p>HTML</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/javaScript.png" alt="JavaScript Logo">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/Mysql.png" alt="SQL logo">
+        <p>Mysql</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="bts">
   <h2>Présentation du BTS SIO</h2>
   <p>Le BTS Services Informatiques aux Organisations (SIO) est une formation en deux ans qui prépare les étudiants à devenir des techniciens supérieurs en informatique. Ce diplôme propose deux spécialités :</p>
@@ -108,39 +127,27 @@
   </div>
 </section>
 
-<<section id="projects">
+<section id="projects">
   <h2>Mes projets</h2>
-  <ul id="project-list">
+  <ul id="project-list slide">
     <li style="--accent-color:#41516C">
-      <div class="date">Projet D'école</div>
-      <div class="title">Title 1</div>
-      <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
+      <div class="date">Projet Véliko</div>
+      <div class="descr"><a href="veliko.html"><img src="images/veliko.png" style="width: 1000px; height: 250px"></a></div>
     </li>
     <li style="--accent-color:#FBCA3E">
-      <div class="date">Projet Java</div>
+      <div class="date">Projet de Stage</div>
       <div class="title">Title 2</div>
       <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis nostrum vero nihil veniam.</div>
     </li>
-    <li style="--accent-color:#E24A68">
-      <div class="date">Projet PHP</div>
-      <div class="title">Title 3</div>
-      <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit, sequi quo, et dolorum saepe nulla hic.</div>
-    </li>
-    <li style="--accent-color:#1B5F8C">
-      <div class="date">Projet personnel</div>
-      <div class="title">Title 4</div>
-      <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
-    </li>
-  </ul>
 </section>
 
 <footer id="contact">
   <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
   <div class="contact-info">
     <h3>Contactez-moi</h3>
-    <p>Email :danbitton04@gmail.com</p>
+    <p>Email : danbitton04@gmail.com</p>
     <p>gitHub : <a href="https://github.com/DanouBitton" target="_blank">dan_bttn</a></p>
-    <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank">Dan Bitton sur LinkedIn</a></p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank">Dan Bitton</a></p>
   </div>
 </footer>
 <script src="index.js"></script>
