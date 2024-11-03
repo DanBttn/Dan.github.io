@@ -495,3 +495,47 @@
         gap: 30px; /* Espacement entre les compétences */
         flex-wrap: wrap; /* Permettre à l'élément de se déplacer à la ligne */
     }
+    #competences {
+        padding: 40px; /* Espace intérieur pour aérer le contenu */
+        background-color: #f9f9f9; /* Fond gris clair pour la section */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        width: 100%; /* Prendre toute la largeur de la page */
+        margin: 40px 0; /* Espacement en haut et en bas */
+        max-width: none; /* Supprime la largeur maximale pour occuper toute la largeur */
+    }
+
+    h3 {
+        text-align: center; /* Centrer le titre */
+        margin-bottom: 20px; /* Espace sous le titre */
+    }
+
+    .skill-bar {
+        display: flex; /* Disposition flexible pour aligner les éléments */
+        align-items: center; /* Centrer verticalement le texte */
+        margin-bottom: 15px; /* Espace entre les barres */
+    }
+
+    .skill-name {
+        flex: 1; /* Laisser de l'espace pour le nom de compétence */
+        font-weight: bold; /* Texte en gras */
+    }
+
+    .bar {
+        flex: 2; /* Laisser de l'espace pour la barre */
+        background-color: #e0e0e0; /* Couleur de fond de la barre */
+        border-radius: 10px; /* Coins arrondis pour la barre */
+        overflow: hidden; /* Masquer le débordement */
+        margin: 0 15px; /* Espacement autour de la barre */
+    }
+
+    .fill {
+        height: 25px; /* Hauteur de la barre remplie */
+        background-color: #007bff; /* Couleur de la barre remplie */
+        transition: width 0.5s ease; /* Animation de la largeur */
+    }
+
+    .percentage {
+        min-width: 50px; /* Largeur minimale pour le pourcentage */
+        text-align: center; /* Centrer le texte */
+    }
