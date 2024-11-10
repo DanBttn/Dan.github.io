@@ -215,3 +215,15 @@ footer .contact-info a:hover {
         width: 80%;
     }
 }
+#Version .version-container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly */
+    align-items: center;
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+.version-item {
+    text-align: center;
+}
+
