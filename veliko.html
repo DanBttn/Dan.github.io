@@ -1,110 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Veliko</title>
-  <link rel="stylesheet" href="css/veliko.css">
+    <meta charset="UTF-8">
+    <title>Veliko</title>
+    <link rel="stylesheet" href="css/veliko.css">
+    <style>
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        /* Modal content container to center image */
+        .modal-content-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Modal image */
+        .modal-content {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Navigation buttons */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Veliko</h1>
-    <nav>
-      <ul>
+<h1>Veliko</h1>
+<nav>
+    <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="#Introduction">Introduction</a></li>
-        <li><a href="#outils et langage utilisé">outils</a></li>
+        <li><a href="#outils et langage utilisé">Outils</a></li>
         <li><a href="#Version">Version</a></li>
         <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    </ul>
+</nav>
 
 <section id="Introduction">
-  <div>
-    <h2>Introduction</h2>
-<p>L'application Véliko a pour objectif de fournir aux utilisateurs des informations précises
-  concernant la disponibilité des vélos au sein des 1400 stations réparties à travers Paris et l'Ile-de-France. Pour faciliter l'accès à ces informations,
-  il est envisagé d'intégrer une carte interactive (ci-après désignée par le terme "MAP") qui rassemblera les données de localisation (coordonnées GPS) de l'ensemble des stations.
-  Par défaut, la visualisation sur la MAP sera centrée sur le cœur de Paris, tout en offrant la possibilité à l'utilisateur de procéder à une localisation personnelle.</p>
-  </div>
+    <div>
+        <h2>Introduction</h2>
+        <p>L'application Véliko a pour objectif de fournir aux utilisateurs des informations précises
+            concernant la disponibilité des vélos au sein des 1400 stations réparties à travers Paris et l'Ile-de-France...</p>
+    </div>
 </section>
 
 <section id="outils et langage utilisé">
     <div>
-      <h3>outils et langage utilisé</h3>
-      <div class="skills">
-        <div class="skill slide-in">
-          <img src="images/java.png" alt="Java Logo">
-          <p>Java</p>
+        <h3>Outils et Langage Utilisé</h3>
+        <div class="skills">
+            <div class="skill slide-in">
+                <img src="images/java.png" alt="Java Logo">
+                <p>Java</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/php.png" alt="PHP Logo">
+                <p>PHP</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/css.png" alt="CSS Logo">
+                <p>CSS</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/html.png" alt="HTML Logo">
+                <p>HTML</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/javaScript.png" alt="JavaScript Logo">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/github.png" alt="GitHub Logo">
+                <p>GitHub</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/symfony.png" alt="Symfony Logo">
+                <p>Symfony</p>
+            </div>
+            <div class="skill slide-in">
+                <img src="images/docker.png" alt="Docker logo">
+                <p>Docker</p>
+            </div>
         </div>
-        <div class="skill slide-in">
-          <img src="images/php.png" alt="PHP Logo">
-          <p>PHP</p>
-        </div>
-        <div class="skill slide-in">
-          <img src="images/css.png" alt="CSS Logo">
-          <p>CSS</p>
-        </div>
-        <div class="skill slide-in">
-          <img src="images/html.png" alt="HTML Logo">
-          <p>HTML</p>
-        </div>
-        <div class="skill slide-in">
-          <img src="images/javaScript.png" alt="JavaScript Logo">
-          <p>JavaScript</p>
-        </div>
-        <div class="skill slide-in">
-          <img src="images/github.png" alt="GitHub Logo">
-          <p>GitHub</p>
-        </div>
-        <div class="skill slide-in">
-          <img src="images/symfony.png" alt="Symfony Logo">
-          <p>Symfony</p>
-    </div>
-        <div class="skill slide-in">
-          <img src="images/docker.png" alt="Docker logo">
-          <p>Docker</p>
-        </div>
-    </div>
     </div>
 </section>
-<br>
-    <br>
-    <section id="Version">
-      <div>
+
+<section id="Version">
+    <div>
         <h2>Version</h2>
         <div class="version-container">
-          <div class="version-item">
-            <p>Version 1.0</p>
-            <img src="images/release%20V1.0.0.png" alt="Version 1.0 release" style="width: 250px">
-          </div>
-          <div class="version-item">
-            <p>Version 2.0</p>
-            <img src="images/release%20V2.0.0.png" alt="Version 2.0 release" style="width: 350px">
-          </div>
+            <div class="version-item">
+                <p>Version 1.0</p>
+                <img src="images/release%20V1.0.0.png" alt="Version 1.0 release" style="width: 250px">
+            </div>
+            <div class="version-item">
+                <p>Version 2.0</p>
+                <img src="images/release%20V2.0.0.png" alt="Version 2.0 release" style="width: 350px">
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section id="">
-      <div>
+<section id="demonstration">
+    <div>
+        <h2>Demonstration</h2>
+        <br>
+        <img src="imagesVeliko/accueil-veliko.png" height="929" width="1876" class="zoomable" alt="Accueil Veliko">
+        <img src="imagesVeliko/page-map.png" height="937" width="1858" class="zoomable" alt="Page Map">
+        <img src="imagesVeliko/page-inscription.png" height="949" width="1869"/>
 
-      </div>
-    </section>
+        <img src="imagesVeliko/page-connexion.png" height="925" width="1859" class="zoomable"/>
+
+        <img src="imagesVeliko/map-connecté.png" height="941" width="1874" class="zoomable"/>
+
+        <img src="imagesVeliko/page-accueil-profil.png" height="938" width="1868" class="zoomable"/>
+
+        <img src="imagesVeliko/page-information-profil.png" height="946" width="1864" class="zoomable"/>
+
+        <img src="imagesVeliko/page-changePassword-profil.png" height="948" width="1873" class="zoomable"/>
+
+        <img src="imagesVeliko/page-suppresion-compte.png" height="937" width="1906"class="zoomable"/>
+
+        <img src="imagesVeliko/page-stationFavoris.png" height="933" width="1900" class="zoomable"/>
+
+        <img src="imagesVeliko/page-ajouter-stationFavoris.png" height="944" width="1869" class="zoomable"/>
+
+    </div>
+</section>
+
+<div id="imageModal" class="modal">
+    <div class="modal-content-container">
+        <span class="close">&times;</span>
+        <span class="nav-button prev">&#10094;</span>
+        <img class="modal-content" id="zoomedImage" alt="Zoomed Image">
+        <span class="nav-button next">&#10095;</span>
+    </div>
+</div>
 
 
-
-    <br>
-    <br>
-    <footer id="contact">
-      <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
-      <div class="contact-info">
+<footer id="contact">
+    <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
+    <div class="contact-info">
         <h3>Contactez-moi</h3>
         <p>Email : danbitton04@gmail.com</p>
-        <p>gitHub : <a href="https://github.com/DanouBitton" target="_blank">dan_bttn</a></p>
+        <p>GitHub : <a href="https://github.com/DanouBitton" target="_blank">dan_bttn</a></p>
         <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank">Dan Bitton</a></p>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-<script src="index.js"></script>
+<script src="js/veliko.js">
+
+</script>
 </body>
 </html>
