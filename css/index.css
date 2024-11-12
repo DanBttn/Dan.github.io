@@ -539,3 +539,62 @@
         min-width: 50px; /* Largeur minimale pour le pourcentage */
         text-align: center; /* Centrer le texte */
     }
+    /* Style de base pour la section "Mon stage" */
+    #stage {
+        padding: 2rem;
+        background-color: #f9f9fc;
+        text-align: center;
+    }
+
+    #stage .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+    }
+
+    /* Style pour le titre */
+    #stage h2 {
+        font-size: 2rem;
+        color: #4b79a1;
+        margin-bottom: 1rem;
+    }
+
+    /* Style pour le texte de description */
+    #stage p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style pour le lien avec effet de survol */
+    #stage a {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #4b79a1;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    #stage a:hover {
+        color: #283e51;
+        border-bottom: 2px solid #4b79a1;
+    }
+
+    /* Style pour l'image */
+    #stage img {
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    #stage img:hover {
+        transform: scale(1.05);
+    }
