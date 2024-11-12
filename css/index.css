@@ -9,26 +9,25 @@
     }
 
     header {
-        background-color: #35424a;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
         color: #fff;
         padding: 20px;
         text-align: center;
     }
 
-    /* Styles pour le menu de navigation */
-    #nav-menu {
+    nav ul, #nav-menu {
         list-style: none;
         padding: 0;
         text-align: center;
         margin: 0;
     }
 
-    #nav-menu li {
+    nav ul li, #nav-menu li {
         display: inline-block;
         margin: 0 15px;
     }
 
-    #nav-menu li a {
+    nav ul li a, #nav-menu li a {
         color: #fff;
         text-decoration: none;
         padding: 10px 20px;
@@ -36,8 +35,13 @@
         transition: background-color 0.3s ease;
     }
 
-    #nav-menu li a:hover {
+    nav ul li a:hover, #nav-menu li a:hover {
         background-color: rgba(255, 255, 255, 0.1);
+    }
+
+
+    h1, h2, h3 {
+        text-align: center;
     }
 
 
@@ -286,7 +290,7 @@
         color: var(--color);
     }
     footer {
-        background-color: #35424a;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
         color: #fff;
         padding: 20px;
         text-align: center;
