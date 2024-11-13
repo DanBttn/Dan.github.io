@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
 
+
     // Get all images with the class 'zoomable'
     const images = document.querySelectorAll(".zoomable");
-    let currentIndex = 0;
+    let currentIndex = -1;
 
     // Open modal and set the current image
     function openModal(index) {
