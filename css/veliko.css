@@ -227,7 +227,19 @@ footer .contact-info a:hover {
     }
 }
 /* Flex layout for version items */
-#Version .version-container {
+#VersionWeb .version-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.version-item {
+    text-align: center;
+}
+
+#VersionJava .version-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -240,14 +252,27 @@ footer .contact-info a:hover {
 }
 
 /* Grid layout for demonstration images */
-#demonstration div {
+#demonstrationWeb div {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two images per row */
     gap: 20px; /* Spacing between images */
     margin-top: 20px;
 }
 
-#demonstration img {
+#demonstrationWeb img {
+    width: 100%; /* Ensures images fit within grid cells */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounds image corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+}
+#demonstrationJava div {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two images per row */
+    gap: 20px; /* Spacing between images */
+    margin-top: 20px;
+}
+
+#demonstrationJava img {
     width: 100%; /* Ensures images fit within grid cells */
     height: auto;
     border-radius: 8px; /* Optional: Rounds image corners */
