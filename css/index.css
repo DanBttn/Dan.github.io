@@ -121,6 +121,12 @@
         text-align: center;
     }
 
+    /* Images responsive globales */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     ul {
         --col-gap: 2rem;
         --row-gap: 2rem;
@@ -466,6 +472,16 @@
         .skill p {
             font-size: 14px;
         }
+
+        /* Navigation sur mobile */
+        #nav-menu li {
+            display: block;
+            margin: 8px 0;
+        }
+
+        header {
+            padding: 14px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -601,4 +617,11 @@
 
     #stage img:hover {
         transform: scale(1.05);
+    }
+
+    /* Image responsive pour la section projets */
+    #projects img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
     }
