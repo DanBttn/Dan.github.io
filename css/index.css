@@ -6,6 +6,7 @@
         background-color: #f4f4f4;
         color: #333;
         line-height: 1.6;
+        overflow-x: hidden; /* Empêche le débordement horizontal sur mobile */
     }
 
     header {
@@ -482,6 +483,30 @@
         header {
             padding: 14px;
         }
+
+        /* Réduction des paddings des cartes BTS */
+        .bts-option {
+            padding: 24px;
+        }
+
+        /* Sections pleine largeur sur mobile */
+        section {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        /* Container fluide sur mobile */
+        .container {
+            max-width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+            box-shadow: none;
+            border-radius: 0;
+        }
     }
 
     @media (max-width: 480px) {
@@ -493,6 +518,23 @@
         .skill {
             width: 90%;
         }
+
+        /* Boutons de #about en pleine largeur et empilés */
+        #about .btn.btn-primary {
+            display: block;
+            width: 100% !important;
+            max-width: 320px;
+            margin: 10px auto !important;
+        }
+
+        /* Réduction padding section compétences pour respirer sur mobile */
+        #competences {
+            padding: 24px;
+        }
+
+        /* Marge et typographie plus compactes */
+        h1, h2, h3 { margin: 12px 0; }
+        p { margin: 8px 0; }
     }
     .container {
         max-width: 1200px; /* Largeur maximale du conteneur */
