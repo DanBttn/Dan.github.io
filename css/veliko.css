@@ -202,6 +202,20 @@ footer .contact-info a:hover {
 
 /* Responsivité */
 @media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 0 10px 20px;
+    }
+
     .skill {
         width: 100px;
     }
@@ -213,6 +227,16 @@ footer .contact-info a:hover {
 
     .skill p {
         font-size: 12px;
+    }
+
+    /* Grilles en une colonne sur mobile */
+    #demonstrationWeb div,
+    #demonstrationJava div,
+    #VersionWeb .version-container,
+    #VersionJava .version-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 
@@ -386,4 +410,10 @@ footer .contact-info a:hover {
 
 .next {
     right: 10px;
+}
+
+/* Images globales responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
