@@ -4,124 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Stage - Dan Bitton</title>
-    <link rel="stylesheet" href="css/stage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <h1>Mon Stage</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html#about">Accueil</a></li>
-      <li><a href="#presentation">présentation</a></li>
-      <li><a href="#objectifPremiereAnnee">objectif</a></li>
-        <li><a href="#realisationPremiereAnnee">réalisation</a></li>
-        <li><a href="#bilan">bilan</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
+  
+  <!-- Header unifié -->
+  <header class="glass-header">
+    <div class="logo">&lt;DanBitton /&gt;</div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html#about">Accueil</a></li>
+        <li><a href="#presentation">Présentation</a></li>
+        <li><a href="#objectifPremiereAnnee">Objectif</a></li>
+        <li><a href="#realisationPremiereAnnee">Réalisation</a></li>
+        <li><a href="#bilan">Bilan</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-</header>
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="glass-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
+          <div class="code-comment">// Expérience professionnelle</div>
+          <h1>Mon Stage chez <span class="accent-text">RIVP</span></h1>
+          <p class="intro-text">Régie Immobilière de la Ville de Paris</p>
+          <p class="sub-intro">Découverte du monde professionnel et mise en pratique des compétences acquises en développement PHP et gestion de bases de données Oracle</p>
+          
+          <div class="cta-group" style="margin-top: 2rem;">
+            <a href="#presentation" class="btn btn-primary">📋 Présentation</a>
+            <a href="#realisationPremiereAnnee" class="btn btn-secondary">🎯 Réalisations</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <section id="presentation">
-<h2>Présentation de l'entreprise</h2>
-
-  <p>Voici l'entreprise dans lequel j'ai effectué mon stage</p>
-
- <br>
-  <p>• La Régie Immobilière de la Ville de Paris
-    (RIVP) est une entreprise publique spécialisée
-    dans le secteur de l'immobilier</p>
-
-  <br>
-  <a href="Pdf/RIVP.pdf" target="_blank" class="centered-link">RIVP</a>
-
+  <div class="container">
+    <div class="glass-card">
+      <h2>Présentation de l'entreprise</h2>
+      <p>Voici l'entreprise dans laquelle j'ai effectué mon stage</p>
+      <br>
+      <p>• La Régie Immobilière de la Ville de Paris (RIVP) est une entreprise publique spécialisée dans le secteur de l'immobilier</p>
+      <br>
+      <a href="Pdf/RIVP.pdf" target="_blank" class="btn btn-primary">Voir la présentation RIVP</a>
+    </div>
+  </div>
 </section>
 
 <section id="objectifPremiereAnnee">
-
-    <h2>Objectif du stage</h2>
-<br>
-  <div>
-    <p>-Nous avions un besoin important de migrer cette application web vers un serveur plus sécurisé et surtout de passer de la versions de php7.1 vers une versions php 8.3.
-
-      Sur le principe, il y a des énormes failles de sécurité sur les versions de php antérieur à la version 8.</p>
-<br>
-     <p> - Simplification du code et  optimisation de l’application -> code en module et optimisation des requêtes.</p>
-<br>
-     <p> - Versionning du code.</p>
-<br>
-
-   <p> -Compréhension du besoin </p>
-<br>
-  <p>  - Mise oeuvre du projet (developpement en php avec connexion à une base de donnée oracle). </p>
-<br>
-  <p>  - Test et livraison du produit.</p>
+  <div class="container">
+    <h2>Objectifs du stage</h2>
+    <div class="glass-card">
+      <h3>🎯 Objectifs principaux</h3>
+      <ul>
+        <li><strong>Migration PHP</strong> : Passer de PHP 7.1 vers PHP 8.3 pour corriger les failles de sécurité</li>
+        <li><strong>Optimisation</strong> : Simplification du code en modules et optimisation des requêtes</li>
+        <li><strong>Versionning</strong> : Mise en place du contrôle de version du code</li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">📋 Méthodologie</h3>
+      <ul>
+        <li>Compréhension du besoin</li>
+        <li>Mise en œuvre du projet (développement en PHP avec connexion à une base de données Oracle)</li>
+        <li>Test et livraison du produit</li>
+      </ul>
+    </div>
   </div>
-
-
 </section>
 
 
 <section id="realisationPremiereAnnee">
-
-    <h2>Réalisation du stage 1er année</h2>
-<br>
-  <a href="Pdf/Doctoged_20230706.pdf" target="_blank">Mission 1</a>
-
-  <br>
-    <br>
-  <a href="Pdf/gestionannexes.pdf" target="_blank">
-   Mission 2 </a>
+  <div class="container">
+    <h2>Réalisations - 1ère année</h2>
+    <div class="skills-grid">
+      <div class="glass-card">
+        <h3>📄 Mission 1 - Doctoged</h3>
+        <p>Développement et migration de l'application de gestion documentaire</p>
+        <a href="Pdf/Doctoged_20230706.pdf" target="_blank" class="btn btn-primary">Voir le rapport</a>
+      </div>
+      
+      <div class="glass-card">
+        <h3>📎 Mission 2 - Gestion Annexes</h3>
+        <p>Système de gestion des annexes et documents associés</p>
+        <a href="Pdf/gestionannexes.pdf" target="_blank" class="btn btn-primary">Voir le rapport</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 
 <section id="objectifDeuxiemeAnee">
-
-    <h2>Objectif du stage 2ème année</h2>
-    <br>
-    <ul>
-        <li>Développement d’une interface de monitoring permettant de surveiller en temps réel les alertes liées aux services et applications critiques.
-        </li>
-        <li>Intégration d’une interface IA avec Copilot Studio</li>
-        <li>Automatisation et amélioration des processus de monitoring</li>
-        <li>appel API avec retour JSON</li>
-    </ul>
+  <div class="container">
+    <h2>Objectifs - 2ème année</h2>
+    <div class="glass-card">
+      <h3>🖥️ Objectifs principaux</h3>
+      <ul>
+        <li><strong>Interface de monitoring</strong> : Surveillance en temps réel des alertes liées aux services et applications critiques</li>
+        <li><strong>Intégration IA</strong> : Interface avec Copilot Studio</li>
+        <li><strong>Automatisation</strong> : Amélioration des processus de monitoring</li>
+        <li><strong>API</strong> : Appels API avec retour JSON</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="realisationDeuxiemeAnnee">
-
-    <h2>Réalisation du stage 2ème année</h2>
-    <br>
-    <a href="Pdf/Interface_Monitoring.pdf" target="_blank">Mission global</a>
-
-    <br>
-    <br>
-
+  <div class="container">
+    <h2>Réalisations - 2ème année</h2>
+    <div class="glass-card" style="text-align: center;">
+      <h3>🎯 Mission globale</h3>
+      <p>Interface de monitoring complète avec intégration IA et automatisation</p>
+      <a href="Pdf/Interface_Monitoring.pdf" target="_blank" class="btn btn-primary">Voir le rapport complet</a>
+    </div>
+  </div>
 </section>
 
 <section id="bilan">
-
+  <div class="container">
     <h2>Bilan du stage</h2>
-  <br>
-    <p> Au cours de ce stage j'ai beaucoup appris à comment essayer de debugger mes erreurs donc à aller voir des solutions via des sites internet qui explique la solution de mes erreurs </p>
-  <br>
-  <p> J'ai appris aussi a m'améliorer sur le langage de PHP puis a voir la différence entre une ancienne version et une nouvelle</p>
-    <br>
-  <p> J'ai eu aussi des difficulté avec un formulaire car j'avais la notion de date ce qui ne donné pas le même format que leur base de donnée </p>
-</section>
-
-
-<br>
-<br>
-<footer id="contact">
-  <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
-  <div class="contact-info">
-    <h3>Contactez-moi</h3>
-    <p>Email : danbitton04@gmail.com</p>
-    <p>gitHub : <a href="https://github.com/DanBttn" target="_blank" style="color: white">dan_bttn</a></p>
-    <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" style="color: white">Dan Bitton</a></p>
+    <div class="glass-card">
+      <h3>✅ Compétences acquises</h3>
+      <ul>
+        <li><strong>Débogage</strong> : Apprentissage des techniques de résolution d'erreurs et recherche de solutions</li>
+        <li><strong>PHP</strong> : Amélioration sur le langage PHP et compréhension des différences entre versions</li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">⚠️ Difficultés rencontrées</h3>
+      <ul>
+        <li><strong>Gestion des dates</strong> : Problèmes de format entre les formulaires et la base de données Oracle</li>
+      </ul>
+    </div>
   </div>
-</footer>
+</section>
+  </main>
+
+  <footer id="contact">
+    <div class="glass-footer">
+      <h2>Restons en contact !</h2>
+      <div class="contact-links">
+        <a href="mailto:danbitton04@gmail.com" class="contact-item">
+          <span class="icon">📧</span> danbitton04@gmail.com
+        </a>
+        <a href="https://github.com/DanBttn" target="_blank" class="contact-item">
+          <span class="icon">🐙</span> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-item">
+          <span class="icon">💼</span> LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; 2025 Dan Bitton. Tous droits réservés.</p>
+    </div>
+  </footer>
 
 <script src="js/index.js"></script>
 </body>

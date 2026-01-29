@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:target="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Dan Bitton</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/png" href="images/portfolio.png">
+
+</head>
+<body>
+<header>
+  <h1>Bienvenue sur le portfolio de Dan Bitton</h1>
+
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#bts">BTS SIO</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#stage">Stage</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>À propos de moi</h2>
+  <p>Je m'appelle Dan Bitton, j'ai 19 ans j'ai fais mes années de lycée a l'école R.E.V.E et aujourd'hui je suis étudiant en BTS SIO option SLAM à l'école ORT Daniel Mayer. Passionné par le développement informatique, je me spécialise dans la conception et la gestion de solutions logicielles.
+    <br> Actuellement toujours en cours d'étude , je vous propose sur ce portfolio de retrouver mes différentes études et projets professionnels que j'ai pu entreprendre au cours de ma carrière.
+    <br> Vous trouverez ci-dessous mon CV.</p>
+    <br>
+
+  <div style="text-align: center;">
+    <a target="_blank" href="Pdf/CV%20Alternance%20Dan%20Biton%20développeur%20informatique.pdf" class="btn btn-primary" style="margin: 0 10px; width: 170px; display: inline-block; align-items: center;">Consulter mon Cv</a>
+    <a target="_blank"  href="Pdf/Synthèse%20Epreuve%20E5%202025.pdf" class="btn btn-primary" style="margin: 0 10px; width: 190px; display: inline-block; align-items: center;"  >Tableau de synthèse</a>
+  </div>
+</section>
+
+<section id="competences">
+  <h3>Mes compétences</h3>
+  <div class="skill-bar">
+    <span class="skill-name">PHP</span>
+    <div class="bar">
+      <div class="fill" style="width: 70%;"></div>
+    </div>
+    <span class="percentage">70%</span>
+  </div>
+  <div class="skill-bar">
+    <span class="skill-name">Java</span>
+    <div class="bar">
+      <div class="fill" style="width: 60%;"></div>
+    </div>
+    <span class="percentage">60%</span>
+  </div>
+  <div class="skill-bar">
+    <span class="skill-name">HTML</span>
+    <div class="bar">
+      <div class="fill" style="width: 70%;"></div>
+    </div>
+    <span class="percentage">75%</span>
+  </div>
+  <div class="skill-bar">
+    <span class="skill-name">CSS</span>
+    <div class="bar">
+      <div class="fill" style="width: 70%;"></div>
+    </div>
+    <span class="percentage">70%</span>
+  </div>
+  <div class="skill-bar">
+    <span class="skill-name">JavaScript</span>
+    <div class="bar">
+      <div class="fill" style="width: 50%;"></div>
+    </div>
+    <span class="percentage">50%</span>
+  </div>
+  <div class="skill-bar">
+    <span class="skill-name">SQL</span>
+    <div class="bar">
+      <div class="fill" style="width: 60%;"></div>
+    </div>
+    <span class="percentage">60%</span>
+  </div>
+
+  <div class="skill-bar">
+    <span class="skill-name">Python</span>
+    <div class="bar">
+      <div class="fill" style="width: 65%;"></div>
+    </div>
+    <span class="percentage">65%</span>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <h3>Mes outils</h3>
+    <div class="outils">
+      <div class="skill slide-in">
+        <img src="images/github.png" alt="GitHub Logo">
+        <p>GitHub</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/symfony.png" alt="Symfony Logo">
+        <p>Symfony</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/docker.png" alt="Docker logo">
+        <p>Docker</p>
+      </div>
+        <div class="skill slide-in">
+            <img src="images/Vscode.png" alt="Visual Studio Logo">
+            <p>Visual Studio</p>
+        </div>
+      <div class="skill slide-in">
+        <img src="images/Mysql.png" alt="SQL logo">
+        <p>Mysql</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h3>Langages</h3>
+    <div class="langage">
+      <div class="skill slide-in">
+        <img src="images/java.png" alt="Java Logo">
+        <p>Java</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/php.png" alt="PHP Logo">
+        <p>PHP</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/css.png" alt="CSS Logo">
+        <p>CSS</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/html.png" alt="HTML Logo">
+        <p>HTML</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/javaScript.png" alt="JavaScript Logo">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill slide-in">
+        <img src="images/twig.png" alt="twig logo">
+        <p>Twig</p>
+      </div>
+        <div class="skill slide-in">
+            <img src="images/sql.png" alt="SQL logo">
+            <p>SQL</p>
+        </div>
+      <div class="skill slide-in">
+        <img src="images/python.png" alt="python logo">
+        <p>Python</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bts">
+  <h2>Présentation du BTS SIO</h2>
+  <p>Le BTS Services Informatiques aux Organisations (SIO) est une formation en deux ans qui prépare les étudiants à devenir des techniciens supérieurs en informatique. Ce diplôme propose deux spécialités :</p>
+<br>
+  <div class="bts-options">
+    <div class="bts-option">
+      <h3>Option SISR</h3>
+      <p>L’option Solution d’Infrastructure, Systèmes et Réseaux (SISR) forme des professionnels des réseaux et équipements informatiques (installation, maintenance, sécurité). En sortant d’un BTS SIO SISR, vous serez capables de gérer et d’administrer le réseau d’une société et d’assurer sa sécurité et sa maintenance.</p>
+      <p>Les techniciens supérieurs en informatique option SISR peuvent accéder aux métiers de :</p>
+      <br>
+      <ul>
+        <li>Administrateur systèmes et réseaux</li>
+        <li>Informaticien support et déploiement</li>
+        <li>Pilote d’exploitation</li>
+        <li>Support systèmes et réseaux</li>
+        <li>Technicien d’infrastructure</li>
+        <li>Technicien de production</li>
+        <li>Technicien micro et réseaux</li>
+      </ul>
+    </div>
+
+    <div class="bts-option">
+      <h3>Option SLAM</h3>
+      <p>L’option Solutions Logicielles et Applications Métiers (SLAM) forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société).</p>
+      <p>Les techniciens supérieurs en informatique option SLAM sont préparés aux métiers de :</p>
+      <br>
+      <ul>
+        <li>Développeur d’applications informatiques</li>
+        <li>Développeur informatique</li>
+        <li>Analyste d’applications ou d’études</li>
+        <li>Analyste programmeur</li>
+        <li>Programmeur analyste</li>
+        <li>Programmeur d’applications</li>
+        <li>Responsable des services applicatifs</li>
+        <li>Technicien d’études informatiques</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stage">
+  <div class="container">
+    <h2>Mon stage</h2>
+    <p>Voici le stage que j'ai effectué au sein de l'entreprise RIVP</p>
+    <br>
+    <a href="stage.html" target="_blank">
+
+    <img src="images/rivp.png" height="200" width="300"/>
+    </a>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Mes projets</h2>
+  <ul id="project-list slide">
+    <li style="--accent-color:#41516C">
+      <div class="date">Projet Véliko</div>
+      <div class="descr"><a href="veliko.html"><img src="images/veliko.png" style="width: 1250px; height: 250px"></a></div>
+    </li>
+  </ul>
+</section>
+
+<footer id="contact">
+  <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
+  <div class="contact-info">
+    <h3>Contactez-moi</h3>
+    <p>Email : <a href="mailto:danbitton04@gmail.com">danbitton04@gmail.com</a></p>
+    <p>gitHub : <a href="https://github.com/DanBttn" target="_blank">dan_bttn</a></p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank">Dan Bitton</a></p>
+  </div>
+</footer>
+<script src="js/index.js"></script>
+</body>
+</html>

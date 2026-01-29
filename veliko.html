@@ -3,22 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veliko</title>
-    <link rel="stylesheet" href="css/veliko.css">
+    <title>Projet Véliko - Dan Bitton</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav>
-    <h1>Veliko</h1>
-    <ul>
+  
+  <!-- Header unifié -->
+  <header class="glass-header">
+    <div class="logo">&lt;DanBitton /&gt;</div>
+    <nav>
+      <ul id="nav-menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="#Introduction">Introduction</a></li>
         <li><a href="#outils et langage utilisé">Outils</a></li>
-        <li><a href="#Version">Version</a></li>
-        <li><a href="#demonstrationWeb">Demonstration</a></li>
-        <li><a href="#demonstrationJava">Difficulté</a></li>
+        <li><a href="#VersionWeb">Versions</a></li>
+        <li><a href="#demonstrationWeb">Démonstration</a></li>
+        <li><a href="#difficulté">Difficultés</a></li>
         <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+      </ul>
+      <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="glass-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
+          <div class="code-comment">// Projet de développement full-stack</div>
+          <h1>Projet <span class="accent-text">Véliko</span></h1>
+          <p class="intro-text">Application de gestion de vélos en libre-service</p>
+          <p class="sub-intro">Système complet avec interface web (PHP/Symfony) et application Java pour l'administration, intégrant l'API Vélib' pour la gestion en temps réel des stations de Paris et Île-de-France</p>
+          
+          <div style="display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap;">
+            <div class="terminal-line">
+              <span class="prompt">$</span> <span class="command">git clone</span> <a href="https://github.com/DanBttn/BTS-SIO-G4-2025-VELIKO-Web" target="_blank" style="color: var(--accent-blue);">veliko-web</a>
+            </div>
+            <div class="terminal-line">
+              <span class="prompt">$</span> <span class="command">git clone</span> <a href="https://github.com/ort-montreuil/BTS-SIO-G4-2025-VELIKO-Java" target="_blank" style="color: var(--accent-blue);">veliko-java</a>
+            </div>
+          </div>
+          
+          <div class="cta-group" style="margin-top: 2rem;">
+            <a href="#Introduction" class="btn btn-primary">📖 Introduction</a>
+            <a href="#demonstrationWeb" class="btn btn-secondary">🖥️ Démo Web</a>
+            <a href="#demonstrationJava" class="btn btn-secondary">☕ Démo Java</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <section id="Introduction">
     <h2 style="text-align: center">Introduction</h2>
@@ -96,30 +135,98 @@
 </section>
 
 <section id="demonstrationWeb">
-    <div style="text-align: center">
-        <h2>Demonstration Web</h2>
-        <br>
-        <img src="imagesVeliko/accueil-veliko.png" height="929" width="1876" class="zoomable" alt="Accueil Veliko">
-        <img src="imagesVeliko/page-map.png" height="937" width="1858" class="zoomable" alt="Page Map">
-        <img src="imagesVeliko/page-inscription.png" height="949" width="1869" class="zoomable"/>
-
-        <img src="imagesVeliko/page-connexion.png" height="925" width="1859" class="zoomable"/>
-
-        <img src="imagesVeliko/map-connecté.png" height="941" width="1874" class="zoomable"/>
-
-        <img src="imagesVeliko/page-accueil-profil.png" height="938" width="1868" class="zoomable"/>
-
-        <img src="imagesVeliko/page-information-profil.png" height="946" width="1864" class="zoomable"/>
-
-        <img src="imagesVeliko/page-changePassword-profil.png" height="948" width="1873" class="zoomable"/>
-
-        <img src="imagesVeliko/page-suppresion-compte.png" height="937" width="1906"class="zoomable"/>
-
-        <img src="imagesVeliko/page-stationFavoris.png" height="933" width="1900" class="zoomable"/>
-
-        <img src="imagesVeliko/page-ajouter-stationFavoris.png" height="944" width="1869" class="zoomable"/>
-
+  <div class="container">
+    <h2>Démonstration Web</h2>
+    <div class="projects-grid">
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/accueil-veliko.png" class="zoomable" alt="Accueil Veliko" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Page d'accueil</h3>
+          <p>Interface principale de l'application</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-map.png" class="zoomable" alt="Page Map" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Carte interactive</h3>
+          <p>Localisation des stations de vélos</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-inscription.png" class="zoomable" alt="Inscription" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Inscription</h3>
+          <p>Création de compte utilisateur</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-connexion.png" class="zoomable" alt="Connexion" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Connexion</h3>
+          <p>Authentification utilisateur</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/map-connecté.png" class="zoomable" alt="Map connecté" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Carte (connecté)</h3>
+          <p>Vue utilisateur authentifié</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-accueil-profil.png" class="zoomable" alt="Profil" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Profil utilisateur</h3>
+          <p>Gestion du compte</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-information-profil.png" class="zoomable" alt="Informations" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Informations</h3>
+          <p>Détails du profil</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-changePassword-profil.png" class="zoomable" alt="Changement mot de passe" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Mot de passe</h3>
+          <p>Modification sécurisée</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-suppresion-compte.png" class="zoomable" alt="Suppression" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Suppression compte</h3>
+          <p>Gestion de la suppression</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-stationFavoris.png" class="zoomable" alt="Stations favoris" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Stations favorites</h3>
+          <p>Liste des favoris</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/page-ajouter-stationFavoris.png" class="zoomable" alt="Ajouter favoris" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Ajouter favoris</h3>
+          <p>Enregistrer une station</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="VersionJava">
@@ -140,23 +247,82 @@
 
 
 <section id="demonstrationJava">
-    <div style="text-align: center">
-        <h2>Demonstration Java</h2>
-        <br>
-        <img src="imagesVeliko/connexionJava.png" height="929" width="1800" class="zoomable" alt="Connexion Admin">
-        <img src="imagesVeliko/Dashboard.png" height="937" width="1858" class="zoomable" alt="Dashboard">
-        <img src="imagesVeliko/GestionUser.png" height="949" width="1869" class="zoomable" alt="Gestion User">
-
-        <img src="imagesVeliko/GestionParc.png" height="925" width="1859" class="zoomable"/>
-        <img src="images/réservation-web.png" height="925" width="1859" class="zoomable"/>
-        <img src="imagesVeliko/DashboardStat.png" height="929" width="1800" class="zoomable" alt="DahsbordStat">
-        <img src="imagesVeliko/stat-user.png" height="937" width="1858" class="zoomable" alt="statUser">
-        <img src="imagesVeliko/stat-station.png" height="949" width="1869" class="zoomable" alt="StatStation">
-
-        <img src="imagesVeliko/stat-réservation.png" height="925" width="1859" class="zoomable"/>
-
-
+  <div class="container">
+    <h2>Démonstration Java</h2>
+    <div class="projects-grid">
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/connexionJava.png" class="zoomable" alt="Connexion Admin" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Connexion Admin</h3>
+          <p>Interface d'authentification administrateur</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/Dashboard.png" class="zoomable" alt="Dashboard" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Dashboard</h3>
+          <p>Tableau de bord principal</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/GestionUser.png" class="zoomable" alt="Gestion User" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Gestion Utilisateurs</h3>
+          <p>Administration des comptes</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/GestionParc.png" class="zoomable" alt="Gestion Parc" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Gestion du Parc</h3>
+          <p>Gestion des vélos et stations</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="images/réservation-web.png" class="zoomable" alt="Réservations" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Réservations</h3>
+          <p>Suivi des réservations</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/DashboardStat.png" class="zoomable" alt="Dashboard Stats" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Statistiques</h3>
+          <p>Dashboard des statistiques</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/stat-user.png" class="zoomable" alt="Stats Utilisateurs" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Stats Utilisateurs</h3>
+          <p>Statistiques des utilisateurs</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/stat-station.png" class="zoomable" alt="Stats Stations" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Stats Stations</h3>
+          <p>Statistiques des stations</p>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="padding: 0;">
+        <img src="imagesVeliko/stat-réservation.png" class="zoomable" alt="Stats Réservations" style="border-radius: 8px 8px 0 0;">
+        <div style="padding: 1rem;">
+          <h3>Stats Réservations</h3>
+          <p>Statistiques des réservations</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <div id="imageModal" class="modal" style="display: none">
@@ -179,16 +345,25 @@
 
     </div>
 </section>
+  </main>
 
-<footer id="contact">
-    <p>&copy; 2024 Dan Bitton. Tous droits réservés.</p>
-    <div class="contact-info">
-        <h3>Contactez-moi</h3>
-        <p>Email : danbitton04@gmail.com</p>
-        <p>GitHub : <a href="https://github.com/DanBttn" target="_blank">dan_bttn</a></p>
-        <p>LinkedIn : <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank">Dan Bitton</a></p>
+  <footer id="contact">
+    <div class="glass-footer">
+      <h2>Restons en contact !</h2>
+      <div class="contact-links">
+        <a href="mailto:danbitton04@gmail.com" class="contact-item">
+          <span class="icon">📧</span> danbitton04@gmail.com
+        </a>
+        <a href="https://github.com/DanBttn" target="_blank" class="contact-item">
+          <span class="icon">🐙</span> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-item">
+          <span class="icon">💼</span> LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; 2025 Dan Bitton. Tous droits réservés.</p>
     </div>
-</footer>
+  </footer>
 
 <script src="js/veliko.js">
 
