@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // === SMOOTH SCROLL POUR LA NAVIGATION ===
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+
+    navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // === MODAL POUR LES IMAGES ===
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("zoomedImage");
     const closeModal = document.querySelector(".close");
@@ -60,4 +82,24 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModalFunction();
         }
     });
+
+    // === EFFET SLIDE-IN POUR LE DÉFILEMENT ===
+    const slideElements = document.querySelectorAll('.slide-in');
+
+    // Utilise IntersectionObserver pour observer quand les éléments entrent dans le viewport
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Ajoute la classe 'active' pour déclencher l'animation
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Arrête d'observer l'élément une fois qu'il est visible
+            }
+        });
+    });
+
+    // Applique l'observateur à chaque élément
+    slideElements.forEach(element => {
+        observer.observe(element);
+    });
 });
+
