@@ -1,65 +1,297 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // === SMOOTH SCROLL POUR LA NAVIGATION ===
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    const headerHeight = document.querySelector('header')?.offsetHeight || 80;
-
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    // ==========================================
+    // MOBILE MENU NAVIGATION
+    // ==========================================
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('nav');
+    
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
         });
-    });
 
-    // === EFFET SLIDE-IN POUR LE DÉFILEMENT ===
-    const slideElements = document.querySelectorAll('.slide-in');
-
-    // Utilise IntersectionObserver pour observer quand les éléments entrent dans le viewport
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Ajoute la classe 'active' pour déclencher l'animation
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Arrête d'observer l'élément une fois qu'il est visible
-            }
-        });
-    }, {
-        threshold: 0.1, // Déclenche quand 10% de l'élément est visible
-        rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit complètement visible
-    });
-
-    // Applique l'observateur à chaque élément
-    slideElements.forEach(element => {
-        observer.observe(element);
-    });
-
-    // === ANIMATION DES COMPÉTENCES (si présentes) ===
-    const skills = document.querySelectorAll('.skill');
-    skills.forEach((skill, index) => {
-        // Utiliser un délai pour l'animation afin qu'elle ne se déclenche pas en même temps
-        setTimeout(() => {
-            skill.classList.add('slide-in');
-        }, index * 150); // Délai croissant pour chaque élément
-    });
-});
-
-// === GESTION DU FORMULAIRE (si présent) ===
-window.addEventListener('load', () => {
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();  // Empêche l'envoi réel du formulaire
-            alert('Merci pour votre message, Dan vous répondra bientôt.');
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
         });
     }
+
+    // ==========================================
+    // TYPEWRITER ANIMATION (HERO)
+    // ==========================================
+    const typewriterElement = document.getElementById('typewriter');
+    if (typewriterElement) {
+        const words = [
+            "concepteur développeur web.", 
+            "développeur Full Stack.", 
+            "étudiant en Bachelor CDWFS.",
+            "à la recherche d'une alternance."
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50; // faster deletion
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100; // normal typing speed
+            }
+
+            // Word completed
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // pause before deletion
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 500; // pause before typing next word
+            }
+
+            setTimeout(type, typingSpeed);
+        }
+        
+        type();
+    }
+
+    // ==========================================
+    // ACTIVE NAVIGATION LINKS ON SCROLL (SCROLL SPY)
+    // ==========================================
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 150)) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // ==========================================
+    // SKILLS PROGRESS BAR ANIMATION ON SCROLL
+    // ==========================================
+    const progressLines = document.querySelectorAll('.progress-line');
+    
+    if (progressLines.length > 0) {
+        const progressObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const line = entry.target;
+                    const percent = line.getAttribute('data-percent');
+                    const fillSpan = line.querySelector('span');
+                    if (fillSpan) {
+                        fillSpan.style.width = percent;
+                    }
+                    // Stop observing once animated
+                    observer.unobserve(line);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        progressLines.forEach(line => {
+            progressObserver.observe(line);
+        });
+    }
+
+    // ==========================================
+    // CONTACT FORM VALIDATION & SUBMISSION
+    // ==========================================
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+            if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
+
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/danbitton04@gmail.com', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Name: nameInput.value.trim(),
+                        Email: emailInput.value.trim(),
+                        Message: messageInput.value.trim()
+                    })
+                });
+
+                if (response.ok) {
+                    alert(`Merci ! Votre message a bien été envoyé. Dan vous répondra très bientôt.`);
+                    contactForm.reset();
+                } else {
+                    throw new Error('Erreur de serveur');
+                }
+            } catch (error) {
+                console.error(error);
+                alert('Une erreur est survenue lors de l\'envoi. Veuillez utiliser directement l\'adresse email : danbitton04@gmail.com');
+            } finally {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // ==========================================
+    // GITHUB PROJECTS API DYNAMIC LOADING
+    // ==========================================
+    fetchGitHubProjects();
 });
 
+/**
+ * Fetches public repositories from GitHub and renders them dynamically
+ */
+async function fetchGitHubProjects() {
+    const githubUsername = 'DanBttn';
+    const gridContainer = document.getElementById('github-projects-grid');
+    const loadingSpinner = document.getElementById('github-projects-loading');
+
+    if (!gridContainer || !loadingSpinner) return;
+
+    try {
+        // Fetch repositories sorted by pushed date (so newest/recently updated repos appear first)
+        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=30`);
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API returned status: ${response.status}`);
+        }
+
+        const repositories = await response.json();
+        
+        // Hide loading spinner
+        loadingSpinner.style.display = 'none';
+
+        // Filter: Only public, non-forked, and non-empty repositories, excluding the username profile repo
+        const filteredRepos = repositories.filter(repo => 
+            !repo.fork && 
+            repo.name.toLowerCase() !== githubUsername.toLowerCase() &&
+            repo.name !== 'danbttn'
+        );
+
+        if (filteredRepos.length === 0) {
+            gridContainer.innerHTML = '<p class="no-projects">Aucun dépôt public trouvé pour cet utilisateur.</p>';
+            return;
+        }
+
+        // Keep the top 6 repositories for a clean layout
+        const displayRepos = filteredRepos.slice(0, 6);
+        gridContainer.innerHTML = ''; // Clear fallback text
+
+        // Language colors mapping
+        const languageColors = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'PHP': '#4f5d95',
+            'Java': '#b07219',
+            'Python': '#3572A5',
+            'Shell': '#89e051',
+            'C++': '#f34b7d',
+            'C#': '#178600',
+            'Ruby': '#701516',
+            'Go': '#00ADD8'
+        };
+
+        displayRepos.forEach(repo => {
+            // Format Last Updated Date
+            const pushedDate = new Date(repo.pushed_at).toLocaleDateString('fr-FR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+
+            // Language Badge
+            const primaryLang = repo.language;
+            const langDotColor = languageColors[primaryLang] || '#8b949e';
+            const languageBadge = primaryLang ? `
+                <span class="repo-lang">
+                    <span class="lang-dot" style="background-color: ${langDotColor}"></span>
+                    ${primaryLang}
+                </span>
+            ` : '<span class="repo-lang"><span class="lang-dot" style="background-color: #8b949e"></span>Néant</span>';
+
+            // Card creation
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            
+            card.innerHTML = `
+                <div class="project-card-img-wrapper">
+                    <img src="https://opengraph.githubassets.com/1/DanBttn/${repo.name}" alt="${repo.name} Preview" class="project-card-img" onerror="this.onerror=null; this.src='images/portfolio.png';">
+                </div>
+                <div class="project-card-header">
+                    <div class="project-icon">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="project-stats">
+                        <span class="stat-item" title="Stars">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-9.7-19.7-37.7-19.7-47.4 0L379.8 316.2l-253.9 36.9c-21.8 3.2-30.5 30-14.7 45.4l183.7 179.1-43.4 252.9c-3.7 21.7 19 38.2 38.5 28L512 739.9l222 116.8c19.5 10.2 42.2-6.3 38.5-28l-43.4-252.9 183.7-179.1c15.8-15.4 7.1-42.2-14.7-45.4zM512 654.5l-153.2 80.6 29.3-170.6-124-120.9 171.3-24.9 76.6-155.2 76.6 155.2 171.3 24.9-124 120.9 29.3 170.6L512 654.5z"></path></svg>
+                            ${repo.stargazers_count}
+                        </span>
+                        <span class="stat-item" title="Forks">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                            ${repo.forks_count}
+                        </span>
+                    </div>
+                </div>
+                <h4 class="project-title">${repo.name}</h4>
+                <p class="project-description">${repo.description || 'Pas de description fournie pour ce projet.'}</p>
+                <div class="project-card-footer">
+                    ${languageBadge}
+                    <span class="project-date">MàJ : ${pushedDate}</span>
+                </div>
+                <div class="project-links">
+                    <a href="${repo.html_url}" target="_blank" class="project-link-btn">
+                        Code source
+                    </a>
+                    ${repo.homepage ? `
+                        <a href="${repo.homepage}" target="_blank" class="project-link-btn demo">
+                            Démo Live
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+            
+            gridContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error('Error fetching repositories from GitHub:', error);
+        gridContainer.innerHTML = '<p class="error-loading">Impossible de charger les dépôts GitHub pour le moment. Veuillez recharger la page ou réessayer ultérieurement.</p>';
+        loadingSpinner.style.display = 'none';
+    }
+}

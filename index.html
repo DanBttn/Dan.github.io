@@ -3,284 +3,569 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Dan Bitton - Développeur</title>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="icon" type="image/png" href="images/portfolio.png">
+  <title>Dan Bitton | Portfolio</title>
+  <!-- Google Fonts: Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/png" href="images/portfolio.png">
 </head>
 <body>
-  <!-- TODO: Ajouter plus de projets quand j'aurai le temps -->
-  <!-- Note perso: Faudra que je change les couleurs si ça plaît pas -->
-  
-  <div class="background-decor"></div>
-  
-  <!-- Code Rain Effect -->
-  <div class="code-rain">
-    <div class="code-line" style="--delay: 0s; --duration: 15s;">&lt;html&gt;</div>
-    <div class="code-line" style="--delay: 2s; --duration: 18s;">function() {</div>
-    <div class="code-line" style="--delay: 4s; --duration: 20s;">const dev =</div>
-    <div class="code-line" style="--delay: 1s; --duration: 16s;">}</div>
-    <div class="code-line" style="--delay: 3s; --duration: 19s;">import React</div>
-    <div class="code-line" style="--delay: 5s; --duration: 17s;">SELECT *</div>
-  </div>
-  
-  <header class="glass-header">
-    <div class="logo">&lt;DanBitton /&gt;</div>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#competences">Compétences</a></li>
-        <li><a href="#bts">BTS SIO</a></li>
-        <li><a href="#stage">Stage</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+
+  <!-- Background decorative elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">Dan<span>.Bitton</span></a>
+      <button class="mobile-nav-toggle" aria-label="Menu de navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#hero" class="active">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#bts">BTS SIO</a></li>
+          <li><a href="#bachelor">Bachelor</a></li>
+          <li><a href="#stage">Stage</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about" class="hero-section">
-      <div class="container glass-card hero-content">
-        <div class="code-comment">// Salut ! Bienvenue sur mon portfolio 👋</div>
-        <h1>Bienvenue, je suis <span class="accent-text">Dan Bitton</span></h1>
-        
-        <div class="terminal-line">
-          <span class="prompt">$</span> <span class="command">whoami</span>
-        </div>
-        
-        <p class="intro-text">
-          Étudiant en <strong>Bachelor Concepteur Développeur Web Full Stack (CDWFS)</strong> à l'école ORT Daniel Mayer. <br>
-          Passionné par le développement informatique, je conçois des solutions logicielles modernes et performantes.
-        </p>
-        
-        <p class="sub-intro">
-          Découvrez à travers ce portfolio mon parcours, mes compétences et mes projets.
-        </p>
-
-        <div class="cta-group">
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="badge">Disponible pour une alternance</span>
+        <h1>Bonjour, je suis <span class="text-gradient">Dan Bitton</span></h1>
+        <h2>Je suis <span id="typewriter" class="text-primary"></span><span class="cursor">|</span></h2>
+        <p class="hero-lead">Étudiant de 20 ans en <strong>Bachelor Concepteur Développeur Web Full Stack (CDWFS)</strong> à l'école ORT Daniel Mayer, passionné par la conception de solutions informatiques modernes, performantes et sécurisées.</p>
+        <div class="hero-actions">
           <a target="_blank" href="Pdf/CV%20Alternance%20Dan%20Biton%20développeur%20informatique.pdf" class="btn btn-primary">
-            <span class="icon">📄</span> <span class="btn-text">Mon CV</span>
+            Consulter mon CV
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           </a>
-          <a target="_blank" href="Pdf/Synthèse%20Epreuve%20E5%202025.pdf" class="btn btn-secondary">
-            <span class="icon">📊</span> <span class="btn-text">Tableau de synthèse</span>
+          <a target="_blank" href="Pdf/Synthèse%20Epreuve%20E5%202025.pdf" class="btn btn-secondary">
+            Tableau de synthèse
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           </a>
-        </div>
-        
-        <!-- Mon petit bloc de code perso 😎 -->
-        <div class="code-snippet">
-          <code>
-            <span class="comment">// Qui suis-je ?</span><br>
-            <span class="keyword">const</span> <span class="class-name">moi</span> = {<br>
-            &nbsp;&nbsp;<span class="property">nom</span>: <span class="string">"Dan Bitton"</span>,<br>
-            &nbsp;&nbsp;<span class="property">age</span>: <span class="string">20</span>,<br>
-            &nbsp;&nbsp;<span class="property">formation</span>: <span class="string">"Bachelor CDWFS"</span>,<br>
-            &nbsp;&nbsp;<span class="property">passions</span>: [<span class="string">"Code"</span>, <span class="string">"Café ☕"</span>, <span class="string">"Jeu vidéo 🎮"</span>],<br>
-            &nbsp;&nbsp;<span class="property">objectif</span>: <span class="string">"Expert Full-Stack"</span><br>
-            };<br>
-            <span class="comment">// Let's code! 🚀</span>
-          </code>
         </div>
       </div>
-    </section>
+      <div class="hero-graphic">
+        <div class="code-box">
+          <div class="code-box-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-box-title">dan_bitton.js</span>
+          </div>
+          <pre><code><span class="keyword">const</span> student = {
+  name: <span class="string">'Dan Bitton'</span>,
+  age: <span class="number">20</span>,
+  formation: <span class="string">'Bachelor CDWFS'</span>,
+  specialty: <span class="string">'Full-Stack Web'</span>,
+  location: <span class="string">'Paris, FR'</span>,
+  skills: [
+    <span class="string">'PHP'</span>, <span class="string">'Symfony'</span>, <span class="string">'React'</span>,
+    <span class="string">'TypeScript'</span>, <span class="string">'Java'</span>, <span class="string">'Docker'</span>
+  ],
+  passions: [<span class="string">'Code'</span>, <span class="string">'Café ☕'</span>, <span class="string">'Jeux 🎮'</span>],
+  status: <span class="string">'Looking for Apprenticeship'</span>
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="competences" class="skills-section">
-      <div class="container">
-        <!-- Mes compétences (en vrai j'apprends encore tous les jours) -->
-        <h2>Mes Compétences</h2>
-        
-        <div class="skills-grid">
-          <!-- Langages -->
-           <div class="glass-card skill-category">
-            <h3>💻 Langages & Bases</h3>
-            <div class="skill-list">
-              <div class="skill-item"><img src="images/java.png" alt="Java"><span>Java</span></div>
-              <div class="skill-item"><img src="images/php.png" alt="PHP"><span>PHP</span></div>
-              <div class="skill-item"><img src="images/javascript.png" alt="JS"><span>JavaScript</span></div>
-              <div class="skill-item"><img src="images/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-              <div class="skill-item"><img src="images/python.png" alt="Python"><span>Python</span></div>
-              <div class="skill-item"><img src="images/html.png" alt="HTML"><span>HTML5</span></div>
-              <div class="skill-item"><img src="images/css.png" alt="CSS"><span>CSS3</span></div>
-              <div class="skill-item"><img src="images/sql.png" alt="SQL"><span>SQL</span></div>
-              <div class="skill-item"><img src="images/twig.png" alt="Twig"><span>Twig</span></div>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Qui suis-je ?</span>
+        <h2 class="section-title">À propos de moi</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-info card">
+          <p>Je m'appelle <strong>Dan Bitton</strong>, j'ai 20 ans. Après avoir effectué mes études secondaires à l'école R.E.V.E, je me suis orienté vers le développement informatique en rejoignant le <strong>BTS SIO option SLAM</strong> (Solutions Logicielles et Applications Métiers) à l'école <strong>ORT Daniel Mayer</strong>.</p>
+          <p>Aujourd'hui, diplômé de mon BTS, je poursuis ma spécialisation en préparant un **Bachelor Concepteur Développeur Web Full Stack (CDWFS)** au sein de la même école. Cette double compétence me permet de concevoir et réaliser des projets informatiques de bout en bout, de l'analyse des besoins à l'intégration et la mise en production.</p>
+          <p>Passionné par le développement web moderne, je me concentre sur la création d'architectures applicatives robustes, de bases de données optimisées et d'interfaces utilisateur (UI/UX) à la fois ergonomiques, fluides et interactives.</p>
+          <div class="info-badges">
+            <div class="info-badge">
+              <span class="badge-title">Spécialisation</span>
+              <span class="badge-value">Full Stack (Web)</span>
+            </div>
+            <div class="info-badge">
+              <span class="badge-title">Localisation</span>
+              <span class="badge-value">Paris, France</span>
+            </div>
+            <div class="info-badge">
+              <span class="badge-title">Niveau Actuel</span>
+              <span class="badge-value">Bachelor CDWFS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Mes acquis</span>
+        <h2 class="section-title">Compétences & Outils</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Progress Bars (Competences) -->
+        <div class="skills-progress card">
+          <h3>Niveau de maîtrise</h3>
+          <p class="card-desc">Auto-évaluation basée sur mes projets académiques, professionnels et personnels.</p>
+          <div class="skills-bars-container">
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">PHP / Symfony</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="progress-line" data-percent="80%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML / CSS</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="progress-line" data-percent="75%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percentage">70%</span>
+              </div>
+              <div class="progress-line" data-percent="70%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">Java</span>
+                <span class="skill-percentage">60%</span>
+              </div>
+              <div class="progress-line" data-percent="60%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">SQL / Base de données</span>
+                <span class="skill-percentage">60%</span>
+              </div>
+              <div class="progress-line" data-percent="60%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript / TypeScript / React</span>
+                <span class="skill-percentage">50%</span>
+              </div>
+              <div class="progress-line" data-percent="50%">
+                <span style="width: 0%;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technologies Grid -->
+        <div class="skills-items-container">
+          <div class="skills-card card">
+            <h3>Langages de programmation</h3>
+            <div class="skills-icon-grid">
+              <div class="skill-icon-card">
+                <img src="images/java.png" alt="Java Logo">
+                <span>Java</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/php.png" alt="PHP Logo">
+                <span>PHP</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/javaScript.png" alt="JavaScript Logo">
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/typescript.png" alt="TypeScript Logo">
+                <span>TypeScript</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/python.png" alt="Python Logo">
+                <span>Python</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/html.png" alt="HTML Logo">
+                <span>HTML5</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/css.png" alt="CSS Logo">
+                <span>CSS3</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/twig.png" alt="Twig Logo">
+                <span>Twig</span>
+              </div>
             </div>
           </div>
 
-          <!-- Outils -->
-          <div class="glass-card skill-category">
-            <h3>🛠️ Outils & Frameworks</h3>
-            <div class="skill-list">
-              <div class="skill-item"><img src="images/symfony.png" alt="Symfony"><span>Symfony</span></div>
-              <div class="skill-item"><img src="images/react.png" alt="React"><span>React</span></div>
-              <div class="skill-item"><img src="images/docker.png" alt="Docker"><span>Docker</span></div>
-              <div class="skill-item"><img src="images/github.png" alt="GitHub"><span>GitHub</span></div>
-              <div class="skill-item"><img src="images/mysql.png" alt="MySQL"><span>MySQL</span></div>
-              <div class="skill-item"><img src="images/vscode.png" alt="VS Code"><span>VS Code</span></div>
+          <div class="skills-card card">
+            <h3>Outils & Frameworks</h3>
+            <div class="skills-icon-grid">
+              <div class="skill-icon-card">
+                <img src="images/github.png" alt="GitHub Logo">
+                <span>GitHub</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/symfony.png" alt="Symfony Logo">
+                <span>Symfony</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/react.png" alt="React Logo">
+                <span>React</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/docker.png" alt="Docker Logo">
+                <span>Docker</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/vscode.png" alt="VS Code Logo">
+                <span>VS Code</span>
+              </div>
+              <div class="skill-icon-card">
+                <img src="images/mysql.png" alt="MySQL Logo">
+                <span>MySQL</span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="progress-bars glass-card">
-           <h3>📊 Niveau de maîtrise</h3>
-           <div class="bar-group">
-             <label>HTML/CSS</label>
-             <div class="progress"><div class="fill" style="width: 75%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>PHP / Symfony</label>
-             <div class="progress"><div class="fill" style="width: 80%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>Python</label>
-             <div class="progress"><div class="fill" style="width: 70%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>Java</label>
-             <div class="progress"><div class="fill" style="width: 60%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>TypeScript</label>
-             <div class="progress"><div class="fill" style="width: 50%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>React</label>
-             <div class="progress"><div class="fill" style="width: 50%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>SQL / Base de données</label>
-             <div class="progress"><div class="fill" style="width: 60%;"></div></div>
-           </div>
-           <div class="bar-group">
-             <label>JavaScript</label>
-             <div class="progress"><div class="fill" style="width: 50%;"></div></div>
-           </div>
+  <!-- BTS SIO Section -->
+  <section id="bts" class="bts-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Diplômé</span>
+        <h2 class="section-title">Parcours - BTS SIO</h2>
+        <div class="title-underline"></div>
+      </div>
+      <p class="section-desc">Le BTS Services Informatiques aux Organisations prépare aux métiers de support, d'administration de réseaux et de conception d'applications logicielles. Promotion 2023-2025 (Validé ✅).</p>
+      
+      <div class="bts-grid">
+        <div class="bts-card card border-cyan">
+          <div class="bts-icon">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="2.2em" width="2.2em" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+          </div>
+          <h3>Option SISR</h3>
+          <span class="bts-sub">Solutions d’Infrastructure, Systèmes et Réseaux</span>
+          <p>Formation axée sur la gestion et la sécurité des infrastructures serveurs et réseaux au sein des organisations.</p>
+          <div class="bts-topics">
+            <span>Administrateur réseaux</span>
+            <span>Technicien système</span>
+            <span>Pilote d'exploitation</span>
+          </div>
+        </div>
+
+        <div class="bts-card card border-purple active-focus">
+          <div class="bts-icon">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="2.2em" width="2.2em" xmlns="http://www.w3.org/2000/svg"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3>Option SLAM</h3>
+          <span class="bts-sub">Solutions Logicielles et Applications Métiers</span>
+          <p>Formation spécialisée dans le développement, l'intégration, la maintenance et la gestion de projet applicatif.</p>
+          <div class="bts-topics">
+            <span>Développeur d'applications</span>
+            <span>Analyste programmeur</span>
+            <span>Chargé d'études informatiques</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="bts" class="bts-section">
-      <div class="container">
-        <h2>Mon parcours - BTS SIO</h2>
-        <p class="section-desc">Formation initiale (2023-2025) ✅ Diplômé</p>
+  <!-- Bachelor Section -->
+  <section id="bachelor" class="bts-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Formation Actuelle</span>
+        <h2 class="section-title">Le Bachelor CDWFS</h2>
+        <div class="title-underline"></div>
+      </div>
+      <p class="section-desc">Concepteur Développeur Web Full Stack - Une formation avancée pour acquérir une expertise complète des projets web complexes.</p>
+      
+      <div class="bts-grid">
+        <div class="bts-card card border-cyan active-focus">
+          <div class="bts-icon">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="2.2em" width="2.2em" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+          </div>
+          <h3>Expertise Full Stack</h3>
+          <span class="bts-sub">Front-End & Back-End</span>
+          <p>Maîtrise de l'ensemble de la chaîne de développement d'applications web modernes.</p>
+          <div class="bts-topics">
+            <span>Interfaces Ergonomiques (UI/UX)</span>
+            <span>API REST & Microservices</span>
+            <span>Frameworks Modernes (React/TS)</span>
+            <span>Bases de Données (SQL/NoSQL)</span>
+          </div>
+        </div>
+
+        <div class="bts-card card border-purple">
+          <div class="bts-icon">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="2.2em" width="2.2em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3>Architecture & Management</h3>
+          <span class="bts-sub">DevOps & Gestion Agile</span>
+          <p>Mise en production sécurisée des solutions logicielles et direction de projets agiles.</p>
+          <div class="bts-topics">
+            <span>CI/CD & Déploiement Continu</span>
+            <span>Sécurisation des architectures</span>
+            <span>Management de projet (Scrum)</span>
+            <span>Qualité Logicielle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage Section -->
+  <section id="stage" class="stage-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Expérience Professionnelle</span>
+        <h2 class="section-title">Mon Stage en Entreprise</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="stage-card card">
+        <div class="stage-logo-side">
+          <div class="logo-wrapper">
+            <img src="images/rivp.png" alt="Logo RIVP">
+          </div>
+          <span class="stage-duration">Stage - 1ère & 2ème Année</span>
+          <a href="stage.html" target="_blank" class="btn btn-secondary btn-sm">Consulter le rapport</a>
+        </div>
+        <div class="stage-info-side">
+          <h3>Régie Immobilière de la Ville de Paris (RIVP)</h3>
+          <p class="stage-company-desc">La RIVP est un bailleur social majeur gérant plus de 60 000 logements en Île-de-France et employant des technologies informatiques robustes pour assurer le suivi de ses résidences et services.</p>
+          
+          <div class="stage-years">
+            <div class="stage-year-block">
+              <h4>🎯 Objectifs 1ère Année</h4>
+              <ul>
+                <li>Migration d'une application critique de PHP 7.1 à PHP 8.3 pour combler les failles de sécurité majeures.</li>
+                <li>Refactorisation et simplification du code via une architecture modulaire et optimisation de requêtes SQL (connexion à une base Oracle).</li>
+                <li>Versionning du code sous Git.</li>
+              </ul>
+              <div class="stage-links">
+                <a href="Pdf/Doctoged_20230706.pdf" target="_blank" class="pdf-badge">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Mission 1 (Doctoged)
+                </a>
+                <a href="Pdf/gestionannexes.pdf" target="_blank" class="pdf-badge">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Mission 2 (Gestion Annexes)
+                </a>
+              </div>
+            </div>
+            
+            <div class="stage-divider"></div>
+
+            <div class="stage-year-block">
+              <h4>🎯 Objectifs 2ème Année</h4>
+              <ul>
+                <li>Développement d'une interface de monitoring temps réel pour surveiller les services et applications critiques de la RIVP.</li>
+                <li>Appels d'API tierces avec parsing et traitement de réponses au format JSON.</li>
+                <li>Intégration d'une interface d'IA avec Microsoft Copilot Studio.</li>
+              </ul>
+              <div class="stage-links">
+                <a href="Pdf/Interface_Monitoring.pdf" target="_blank" class="pdf-badge">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em" style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Mission Globale (Monitoring)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Mes réalisations</span>
+        <h2 class="section-title">Mes Projets</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="featured-project-container">
+        <h3>⭐ Projets Vedettes</h3>
         
-        <div class="bts-cards">
-          <div class="glass-card bts-option">
-            <div class="option-header slam">SLAM</div>
-            <h3>Solutions Logicielles et Applications Métiers</h3>
-            <p>Spécialisation dans le développement, l'intégration et la maintenance de solutions logicielles.</p>
-            <ul>
-              <li>Développeur d'applications</li>
-              <li>Analyste programmeur</li>
-              <li>Chargé d'études informatiques</li>
-            </ul>
+        <div class="featured-projects-list" style="display: flex; flex-direction: column; gap: 30px;">
+          <!-- Projet Véliko -->
+          <div class="featured-project-card card">
+            <div class="featured-img-container">
+              <img src="images/veliko.png" alt="Projet Véliko">
+            </div>
+            <div class="featured-content">
+              <span class="project-tag">Web & Mobile & Java Desktop</span>
+              <h4>Projet Véliko</h4>
+              <p>Une solution complète permettant aux utilisateurs de connaître en temps réel la disponibilité des vélos en stations en Île-de-France via l'API Veli'b. Comprend une interface web publique, une application mobile, et un tableau de bord d'administration robuste écrit en Java (Swing/JDBC) pour le suivi des vélos et des utilisateurs.</p>
+              <div class="project-tech-badges">
+                <span>Symfony</span>
+                <span>Java</span>
+                <span>MySQL</span>
+                <span>Docker</span>
+                <span>API Rest</span>
+              </div>
+              <div class="featured-actions">
+                <a href="veliko.html" class="btn btn-primary">En savoir plus (Démo & Détails)</a>
+              </div>
+            </div>
           </div>
 
-          <div class="glass-card bts-option">
-            <div class="option-header sisr">SISR</div>
-            <h3>Solutions d'Infrastructure, Systèmes et Réseaux</h3>
-            <p>Spécialisation dans la gestion, l'administration et la sécurité des infrastructures réseaux.</p>
-             <ul>
-              <li>Administrateur réseaux</li>
-              <li>Technicien système</li>
-              <li>Pilote d'exploitation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="bachelor" class="bts-section" style="background: var(--bg-secondary);">
-      <div class="container">
-        <h2>Le Bachelor CDWFS</h2>
-        <p class="section-desc">Concepteur Développeur Web Full Stack - Formation actuelle pour devenir un expert complet du web</p>
-        
-        <div class="bts-cards">
-          <div class="glass-card bts-option">
-            <div class="option-header slam">Full Stack</div>
-            <h3>🎯 L'Expertise Full Stack (Front & Back)</h3>
-            <p>Création intégrale d'applications, de l'interface visible aux coulisses techniques.</p>
-            <ul>
-              <li><strong>Front-end</strong> : Interfaces adaptatives, ergonomiques (UI/UX) et accessibles sur tous supports</li>
-              <li><strong>Back-end</strong> : Logique serveur, API REST et structuration des données (SQL/NoSQL)</li>
-            </ul>
-          </div>
-
-          <div class="glass-card bts-option">
-            <div class="option-header slam">Architecture</div>
-            <h3>🏗️ L'Architecture & la Gestion de Projet</h3>
-            <p>Industrialisation des développements et travail en équipe professionnelle.</p>
-            <ul>
-              <li><strong>DevOps & Sécurité</strong> : Déploiement (CI/CD), administration serveurs (Linux), sécurisation des architectures</li>
-              <li><strong>Management Agile</strong> : Pilotage de projets (Méthodes Agiles/Scrum), analyse besoins clients, qualité logicielle</li>
-            </ul>
+          <!-- Projet Invitation -->
+          <div class="featured-project-card card">
+            <div class="featured-img-container">
+              <a href="invitation.html"><img src="images/projet_invitation.jpg" alt="Projet Invitation"></a>
+            </div>
+            <div class="featured-content">
+              <span class="project-tag">Application Web Flask & Excel</span>
+              <h4>Projet Invitation</h4>
+              <p>Une application web interactive de gestion d'invitations (RSVP) conçue en Python avec le framework Flask. Le système valide les réponses en temps réel (Nom, Prénom, Téléphone, présence) et enregistre automatiquement les données dans un fichier Excel structuré à l'aide de Pandas et OpenPyXL, tout en recalculant dynamiquement à l'écran le nombre total de participants confirmés.</p>
+              <div class="project-tech-badges">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Pandas</span>
+                <span>OpenPyXL</span>
+                <span>Excel Integration</span>
+                <span>HTML / CSS</span>
+              </div>
+              <div class="featured-actions">
+                <a href="invitation.html" class="btn btn-primary">En savoir plus (Détails)</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="stage" class="stage-section">
-      <div class="container">
-        <h2>Mon Expérience</h2>
-        <!-- Mon stage chez RIVP, super expérience ! -->
-        <div class="glass-card stage-card">
-          <div class="stage-logo">
-             <img src="images/rivp.png" alt="RIVP">
-          </div>
-          <div class="stage-content">
-            <h3>Stage chez RIVP</h3>
-            <p>Découverte du monde professionnel et mise en pratique des compétences acquises.</p>
-            <a href="stage.html" class="btn btn-outline">Voir le rapport</a>
-          </div>
+      <!-- Dynamic GitHub Projects -->
+      <div class="github-projects-container">
+        <div class="github-header">
+          <h3>📂 Dépôts GitHub Dynamiques</h3>
+          <p class="github-subtitle">Alimenté en temps réel par l'API GitHub. Créez un nouveau dépôt public pour voir cette section se mettre à jour instantanément.</p>
+        </div>
+
+        <div id="github-projects-loading" class="loading-container">
+          <div class="spinner"></div>
+          <p>Chargement des projets depuis GitHub...</p>
+        </div>
+
+        <div id="github-projects-grid" class="github-grid">
+          <!-- Dynamic cards will be injected here by JS -->
+        </div>
+
+        <div class="github-footer">
+          <a href="https://github.com/DanBttn" target="_blank" class="btn btn-secondary">
+            Voir tout mon profil GitHub
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.2em" width="1.2em" style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 721 192 888.4 369.6 947.4c22.4 4.1 30.6-9.7 30.6-21.6 0-10.7-.4-39-.6-76.6-124.5 27-150.8-60-150.8-60-20.4-51.8-49.7-65.6-49.7-65.6-40.6-27.8 3.1-27.2 3.1-27.2 44.9 3.2 68.5 46.1 68.5 46.1 40 68.4 104.8 48.6 130.3 37.2 4-29 15.6-48.6 28.4-59.8-99.4-11.3-203.9-49.7-203.9-221.2 0-48.9 17.4-88.8 46.2-120.2-4.6-11.3-20-56.9 4.4-118.6 0 0 37.6-12 123.2 45.9 35.7-9.9 74-14.9 112-15.1 37.9.2 76.2 5.2 112 15.1 85.6-57.9 123.1-45.9 123.1-45.9 24.5 61.7 9.1 107.3 4.5 118.6 28.8 31.4 46.1 71.3 46.1 120.2 0 171.9-104.6 209.7-204.4 220.8 16.1 13.8 30.4 41.2 30.4 83.1 0 60-.5 108.5-.5 123.3 0 12 8.1 25.9 30.8 21.5C832.1 888.2 960 720.9 960 523.5 960 276.4 759.6 76.3 511.6 76.3z"></path></svg>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="projects-section">
-      <div class="container">
-       <h2>Mes Projets</h2>
-       <!-- Pour l'instant j'ai que Véliko mais j'en ferai d'autres -->
-       <div class="projects-grid">
-         <article class="glass-card project-card">
-           <div class="project-image">
-             <a href="veliko.html"><img src="images/veliko.png" alt="Projet Veliko"></a>
-           </div>
-           <div class="project-info">
-             <h3>Projet Véliko</h3>
-             <p>Développement d'une application de gestion de vélos.</p>
-             <div class="tags">
-               <span class="tag">PHP</span>
-               <span class="tag">MVC</span>
-             </div>
-             <a href="veliko.html" class="btn btn-small">Voir détails</a>
-           </div>
-         </article>
-       </div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Me joindre</span>
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="title-underline"></div>
       </div>
-    </section>
+      
+      <div class="contact-grid">
+        <div class="contact-cards">
+          <a href="mailto:danbitton04@gmail.com" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Email</h4>
+              <p>danbitton04@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://github.com/DanBttn" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 721 192 888.4 369.6 947.4c22.4 4.1 30.6-9.7 30.6-21.6 0-10.7-.4-39-.6-76.6-124.5 27-150.8-60-150.8-60-20.4-51.8-49.7-65.6-49.7-65.6-40.6-27.8 3.1-27.2 3.1-27.2 44.9 3.2 68.5 46.1 68.5 46.1 40 68.4 104.8 48.6 130.3 37.2 4-29 15.6-48.6 28.4-59.8-99.4-11.3-203.9-49.7-203.9-221.2 0-48.9 17.4-88.8 46.2-120.2-4.6-11.3-20-56.9 4.4-118.6 0 0 37.6-12 123.2 45.9 35.7-9.9 74-14.9 112-15.1 37.9.2 76.2 5.2 112 15.1 85.6-57.9 123.1-45.9 123.1-45.9 24.5 61.7 9.1 107.3 4.5 118.6 28.8 31.4 46.1 71.3 46.1 120.2 0 171.9-104.6 209.7-204.4 220.8 16.1 13.8 30.4 41.2 30.4 83.1 0 60-.5 108.5-.5 123.3 0 12 8.1 25.9 30.8 21.5C832.1 888.2 960 720.9 960 523.5 960 276.4 759.6 76.3 511.6 76.3z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>GitHub</h4>
+              <p>dan_bttn</p>
+            </div>
+          </a>
 
-  </main>
+          <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM348.3 787.3H241.8V444h106.5v343.3zm-53.2-389.2c-34.1 0-61.7-27.6-61.7-61.7 0-34.1 27.6-61.7 61.7-61.7 34.1 0 61.7 27.6 61.7 61.7 0 34.1-27.6 61.7-61.7 61.7zm504.6 389.2H693.2V620c0-39.9-.7-91.2-55.6-91.2-55.6 0-64.1 43.5-64.1 88.3v170.2H467V444h102v46.9h1.4c14.2-26.9 48.9-55.3 100.7-55.3 107.7 0 127.7 70.9 127.7 163v188.7h.1z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>LinkedIn</h4>
+              <p>Dan Bitton</p>
+            </div>
+          </a>
+        </div>
 
-  <footer id="contact">
-    <div class="glass-footer">
-      <h2>Restons en contact !</h2>
-      <div class="contact-links">
-        <a href="mailto:danbitton04@gmail.com" class="contact-item">
-          <span class="icon">📧</span> danbitton04@gmail.com
-        </a>
-        <a href="https://github.com/DanBttn" target="_blank" class="contact-item">
-          <span class="icon">🐙</span> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-item">
-          <span class="icon">💼</span> LinkedIn
-        </a>
+        <div class="contact-form-container card">
+          <h3>Envoyer un message</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Nom Complet" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Adresse Email" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer le message</button>
+          </form>
+        </div>
       </div>
-      <p class="copyright">&copy; 2025 Dan Bitton. Tous droits réservés.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 Dan Bitton. Tous droits réservés.</p>
+      <p class="footer-note">Portfolio moderne, performant et dynamique alimenté par l'API GitHub.</p>
     </div>
   </footer>
 

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Invitation - Dan Bitton</title>
+    <meta name="description" content="Découvrez le Projet Invitation de Dan Bitton, une application web interactive Flask de gestion de faire-part RSVP de mariage avec enveloppe 3D et tableur Excel via Pandas/OpenPyXL.">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background decorative elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">Dan<span>.Bitton</span></a>
+      <button class="mobile-nav-toggle" aria-label="Menu de navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#outils">Outils</a></li>
+          <li><a href="#demonstration">Démonstration</a></li>
+          <li><a href="#difficulte">Difficultés</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="section-container">
+        <div class="glass-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
+          <div class="code-comment">// Projet d'intégration Web & Excel</div>
+          <h1>Projet <span class="accent-text">Invitation</span></h1>
+          <p class="intro-text">Application web interactive de gestion de faire-part et réponses RSVP</p>
+          <p class="sub-intro">Système complet en Python/Flask permettant de gérer les confirmations d'invités en temps réel dans un tableur Excel à l'aide de Pandas et OpenPyXL, doté d'une enveloppe virtuelle animée en 3D.</p>
+          
+          <div style="display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap;">
+            <div class="terminal-line">
+              <span class="prompt">$</span> <span class="command">git clone</span> <a href="https://github.com/DanBttn/projet-invitation" target="_blank" style="color: var(--accent-blue);">projet-invitation</a>
+            </div>
+          </div>
+          
+          <div class="cta-group" style="margin-top: 2rem;">
+            <a href="#Introduction" class="btn btn-primary">📖 Introduction</a>
+            <a href="#demonstration" class="btn btn-secondary">🖥️ Démonstration</a>
+            <a href="#difficulte" class="btn btn-secondary">⚠️ Difficultés</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="Introduction">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Mariage d'Elie & Noa</span>
+          <h2 class="section-title">Introduction</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; text-align: left; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
+          <img src="images/projet_invitation.jpg" alt="Faire-Part Elie & Noa" style="border-radius: 8px; max-width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" class="zoomable">
+          <div style="flex: 1; min-width: 300px; max-width: 650px;">
+            <p style="margin-bottom: 15px;">L'objectif du <strong>Projet Invitation</strong> est de fournir une solution web interactive pour collecter les réponses des invités (RSVP) pour le mariage d'Elie & Noa. En remplacement des cartons d'invitation papier classiques, cette application propose une expérience utilisateur numérique et moderne.</p>
+            <p style="margin-bottom: 15px;">Les convives accèdent à une page d'accueil présentant une enveloppe cachetée. Un clic sur celle-ci déclenche une animation 3D ouvrant le rabat et faisant glisser le faire-part personnalisé. L'utilisateur peut ensuite glisser (swipe) vers la gauche ou cliquer pour accéder au formulaire de confirmation.</p>
+            <p>La force du projet réside dans sa gestion automatisée des réponses : le formulaire valide les coordonnées (nom, prénom, format du téléphone à 10 chiffres), puis écrit de manière asynchrone les informations dans un tableur Excel `reponse.xlsx`. Le système calcule dynamiquement le cumul total des convives présents et l'enregistre en temps réel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outils Section -->
+    <section id="outils">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Stack Technique</span>
+          <h2 class="section-title">Outils et Langages</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="skills" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 30px;">
+          <div class="skill slide-in">
+            <img src="images/python.png" alt="Python Logo">
+            <p>Python</p>
+          </div>
+          <div class="skill slide-in">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00f2fe; filter: drop-shadow(0 0 4px rgba(0, 242, 254, 0.4));">
+              <path d="M6 3h12" />
+              <path d="M9 3v6.3C9 10.2 7 14 7 17a5 5 0 0 0 10 0c0-3-2-6.8-2-7.7V3" />
+              <path d="M8.5 13h7" />
+            </svg>
+            <p>Flask</p>
+          </div>
+          <div class="skill slide-in">
+            <img src="images/html.png" alt="HTML Logo">
+            <p>HTML5</p>
+          </div>
+          <div class="skill slide-in">
+            <img src="images/css.png" alt="CSS Logo">
+            <p>CSS3</p>
+          </div>
+          <div class="skill slide-in">
+            <img src="images/javaScript.png" alt="JavaScript Logo">
+            <p>JavaScript</p>
+          </div>
+          <div class="skill slide-in">
+            <img src="images/github.png" alt="GitHub Logo">
+            <p>GitHub</p>
+          </div>
+          <div class="skill slide-in">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #107c41; filter: drop-shadow(0 0 4px rgba(16, 124, 65, 0.4));">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="8" y1="13" x2="16" y2="13" />
+              <line x1="8" y1="17" x2="16" y2="17" />
+              <line x1="10" y1="9" x2="9" y2="9" />
+            </svg>
+            <p>Excel / Pandas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Démonstration Section -->
+    <section id="demonstration">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Parcours invité</span>
+          <h2 class="section-title">Démonstration de l'application</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="projects-grid" style="margin-top: 30px;">
+          
+          <div class="glass-card slide-in" style="padding: 0;">
+            <img src="images/invitation_envelope.png" class="zoomable" alt="Enveloppe Fermée" style="border-radius: 8px 8px 0 0;">
+            <div style="padding: 1.5rem;">
+              <h3>1. Enveloppe d'Accueil</h3>
+              <p>L'invité est accueilli par une enveloppe scellée contenant les prénoms des mariés.</p>
+            </div>
+          </div>
+          
+          <div class="glass-card slide-in" style="padding: 0;">
+            <img src="images/invitation_card.png" class="zoomable" alt="Carte d'invitation" style="border-radius: 8px 8px 0 0;">
+            <div style="padding: 1.5rem;">
+              <h3>2. Ouverture du Faire-part</h3>
+              <p>Le clic déclenche l'ouverture du rabat et la carte d'invitation glisse vers le haut.</p>
+            </div>
+          </div>
+          
+          <div class="glass-card slide-in" style="padding: 0;">
+            <img src="images/invitation_form.png" class="zoomable" alt="Formulaire RSVP" style="border-radius: 8px 8px 0 0;">
+            <div style="padding: 1.5rem;">
+              <h3>3. Formulaire de Présence</h3>
+              <p>L'utilisateur saisit son nom, prénom, téléphone et valide le nombre de participants.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Difficultés Section -->
+    <section id="difficulte">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Challenges résolus</span>
+          <h2 class="section-title">Difficultés rencontrées</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="difficulties-list" style="display: flex; flex-direction: column; gap: 20px; max-width: 850px; margin: 40px auto 0 auto;">
+          <div class="glass-card slide-in" style="padding: 1.5rem; display: flex; gap: 20px; align-items: flex-start;">
+            <div class="difficulty-number" style="background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); color: var(--primary); font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: #ffffff;">Validation stricte du téléphone</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-sub);">Pour éviter les fausses saisies dans le tableau Excel final, le backend Flask applique un contrôle regex pour s'assurer que le numéro entré contient exactement 10 chiffres.</p>
+            </div>
+          </div>
+          <div class="glass-card slide-in" style="padding: 1.5rem; display: flex; gap: 20px; align-items: flex-start;">
+            <div class="difficulty-number" style="background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); color: var(--primary); font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: #ffffff;">Conflits d'accès au fichier Excel (PermissionError)</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-sub);">Si l'administrateur ouvre le fichier <code>reponse.xlsx</code> sur le serveur pendant qu'un invité soumet une réponse, une exception est levée. J'ai implémenté un bloc <code>try/except</code> renvoyant un message d'erreur clair demandant de fermer le fichier et de réessayer.</p>
+            </div>
+          </div>
+          <div class="glass-card slide-in" style="padding: 1.5rem; display: flex; gap: 20px; align-items: flex-start;">
+            <div class="difficulty-number" style="background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); color: var(--primary); font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: #ffffff;">Synchronisation du total général</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-sub);">Le calcul du cumul des invités présents s'effectue en temps réel via Pandas (<code>df[df['Présence'] == 'Oui']['Nombre de personnes'].sum()</code>) et est réinjecté dans une cellule fixe de la feuille Excel à l'aide d'OpenPyXL à chaque soumission réussie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal pour images (lightbox) -->
+  <div id="imageModal" class="modal" style="display: none">
+    <span class="close">&times;</span>
+    <span class="nav-button prev" style="left: 40px;">&#10094;</span>
+    <img class="modal-content" id="zoomedImage" alt="Zoomed Image">
+    <span class="nav-button next" style="right: 40px;">&#10095;</span>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Me joindre</span>
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+        <div class="contact-cards">
+          <a href="mailto:danbitton04@gmail.com" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Email</h4>
+              <p>danbitton04@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://github.com/DanBttn" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 721 192 888.4 369.6 947.4c22.4 4.1 30.6-9.7 30.6-21.6 0-10.7-.4-39-.6-76.6-124.5 27-150.8-60-150.8-60-20.4-51.8-49.7-65.6-49.7-65.6-40.6-27.8 3.1-27.2 3.1-27.2 44.9 3.2 68.5 46.1 68.5 46.1 40 68.4 104.8 48.6 130.3 37.2 4-29 15.6-48.6 28.4-59.8-99.4-11.3-203.9-49.7-203.9-221.2 0-48.9 17.4-88.8 46.2-120.2-4.6-11.3-20-56.9 4.4-118.6 0 0 37.6-12 123.2 45.9 35.7-9.9 74-14.9 112-15.1 37.9.2 76.2 5.2 112 15.1 85.6-57.9 123.1-45.9 123.1-45.9 24.5 61.7 9.1 107.3 4.5 118.6 28.8 31.4 46.1 71.3 46.1 120.2 0 171.9-104.6 209.7-204.4 220.8 16.1 13.8 30.4 41.2 30.4 83.1 0 60-.5 108.5-.5 123.3 0 12 8.1 25.9 30.8 21.5C832.1 888.2 960 720.9 960 523.5 960 276.4 759.6 76.3 511.6 76.3z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>GitHub</h4>
+              <p>dan_bttn</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM348.3 787.3H241.8V444h106.5v343.3zm-53.2-389.2c-34.1 0-61.7-27.6-61.7-61.7 0-34.1 27.6-61.7 61.7-61.7 34.1 0 61.7 27.6 61.7 61.7 0 34.1-27.6 61.7-61.7 61.7zm504.6 389.2H693.2V620c0-39.9-.7-91.2-55.6-91.2-55.6 0-64.1 43.5-64.1 88.3v170.2H467V444h102v46.9h1.4c14.2-26.9 48.9-55.3 100.7-55.3 107.7 0 127.7 70.9 127.7 163v188.7h.1z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>LinkedIn</h4>
+              <p>Dan Bitton</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 Dan Bitton. Tous droits réservés.</p>
+      <p class="footer-note">Portfolio moderne, performant et dynamique alimenté par l'API GitHub.</p>
+    </div>
+  </footer>
+
+  <script src="js/veliko.js"></script>
+  <script>
+  window.addEventListener('load', function() {
+      const images = ['images/invitation_envelope.png', 'images/invitation_card.png', 'images/invitation_form.png'];
+      images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+          img.onload = function() {
+              const canvas = document.createElement('canvas');
+              canvas.width = img.width;
+              canvas.height = img.height;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0);
+              let minX = canvas.width;
+              let maxX = 0;
+              for (let x = 0; x < canvas.width; x++) {
+                  for (let y = 0; y < canvas.height; y++) {
+                      const data = ctx.getImageData(x, y, 1, 1).data;
+                      const isBg = (Math.abs(data[0] - 251) < 15 && Math.abs(data[1] - 248) < 15 && Math.abs(data[2] - 243) < 15) || (data[0] > 250 && data[1] > 250 && data[2] > 250);
+                      if (!isBg) {
+                          if (x < minX) minX = x;
+                          if (x > maxX) maxX = x;
+                      }
+                  }
+              }
+              console.log("ANALYSIS_RESULT for " + src + ": minX=" + minX + ", maxX=" + maxX + ", width=" + canvas.width);
+          };
+      });
+  });
+  </script>
+</body>
+</html>

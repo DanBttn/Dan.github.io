@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Background decorative elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
   
   <!-- Header unifié -->
   <header class="glass-header">
@@ -33,7 +37,7 @@
 
   <main>
     <section class="hero-section">
-      <div class="container">
+      <div class="section-container">
         <div class="glass-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
           <div class="code-comment">// Expérience professionnelle</div>
           <h1>Mon Stage chez <span class="accent-text">RIVP</span></h1>
@@ -49,7 +53,7 @@
     </section>
 
 <section id="presentation">
-  <div class="container">
+  <div class="section-container">
     <div class="glass-card slide-in">
       <h2>Présentation de l'entreprise</h2>
       <p>Voici l'entreprise dans laquelle j'ai effectué mon stage</p>
@@ -62,8 +66,12 @@
 </section>
 
 <section id="objectifPremiereAnnee">
-  <div class="container">
-    <h2>Objectifs du stage</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Missions & Méthode</span>
+      <h2 class="section-title">Objectifs du stage</h2>
+      <div class="title-underline"></div>
+    </div>
     <div class="glass-card slide-in">
       <h3>🎯 Objectifs principaux</h3>
       <ul>
@@ -84,8 +92,12 @@
 
 
 <section id="realisationPremiereAnnee">
-  <div class="container">
-    <h2>Réalisations - 1ère année</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Première année</span>
+      <h2 class="section-title">Réalisations</h2>
+      <div class="title-underline"></div>
+    </div>
     <div class="skills-grid">
       <div class="glass-card slide-in">
         <h3>📄 Mission 1 - Doctoged</h3>
@@ -104,8 +116,12 @@
 
 
 <section id="objectifDeuxiemeAnee">
-  <div class="container">
-    <h2>Objectifs - 2ème année</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Deuxième année</span>
+      <h2 class="section-title">Objectifs principaux</h2>
+      <div class="title-underline"></div>
+    </div>
     <div class="glass-card slide-in">
       <h3>🖥️ Objectifs principaux</h3>
       <ul>
@@ -119,8 +135,12 @@
 </section>
 
 <section id="realisationDeuxiemeAnnee">
-  <div class="container">
-    <h2>Réalisations - 2ème année</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Deuxième année</span>
+      <h2 class="section-title">Réalisations</h2>
+      <div class="title-underline"></div>
+    </div>
     <div class="glass-card slide-in" style="text-align: center;">
       <h3>🎯 Mission globale</h3>
       <p>Interface de monitoring complète avec intégration IA et automatisation</p>
@@ -130,8 +150,12 @@
 </section>
 
 <section id="bilan">
-  <div class="container">
-    <h2>Bilan du stage</h2>
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Bilan professionnel</span>
+      <h2 class="section-title">Bilan du stage</h2>
+      <div class="title-underline"></div>
+    </div>
     <div class="glass-card slide-in">
       <h3>✅ Compétences acquises</h3>
       <ul>
@@ -148,21 +172,56 @@
 </section>
   </main>
 
-  <footer id="contact">
-    <div class="glass-footer">
-      <h2>Restons en contact !</h2>
-      <div class="contact-links">
-        <a href="mailto:danbitton04@gmail.com" class="contact-item">
-          <span class="icon">📧</span> danbitton04@gmail.com
-        </a>
-        <a href="https://github.com/DanBttn" target="_blank" class="contact-item">
-          <span class="icon">🐙</span> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-item">
-          <span class="icon">💼</span> LinkedIn
-        </a>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Me joindre</span>
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="title-underline"></div>
       </div>
-      <p class="copyright">&copy; 2025 Dan Bitton. Tous droits réservés.</p>
+      
+      <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+        <div class="contact-cards">
+          <a href="mailto:danbitton04@gmail.com" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Email</h4>
+              <p>danbitton04@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://github.com/DanBttn" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 721 192 888.4 369.6 947.4c22.4 4.1 30.6-9.7 30.6-21.6 0-10.7-.4-39-.6-76.6-124.5 27-150.8-60-150.8-60-20.4-51.8-49.7-65.6-49.7-65.6-40.6-27.8 3.1-27.2 3.1-27.2 44.9 3.2 68.5 46.1 68.5 46.1 40 68.4 104.8 48.6 130.3 37.2 4-29 15.6-48.6 28.4-59.8-99.4-11.3-203.9-49.7-203.9-221.2 0-48.9 17.4-88.8 46.2-120.2-4.6-11.3-20-56.9 4.4-118.6 0 0 37.6-12 123.2 45.9 35.7-9.9 74-14.9 112-15.1 37.9.2 76.2 5.2 112 15.1 85.6-57.9 123.1-45.9 123.1-45.9 24.5 61.7 9.1 107.3 4.5 118.6 28.8 31.4 46.1 71.3 46.1 120.2 0 171.9-104.6 209.7-204.4 220.8 16.1 13.8 30.4 41.2 30.4 83.1 0 60-.5 108.5-.5 123.3 0 12 8.1 25.9 30.8 21.5C832.1 888.2 960 720.9 960 523.5 960 276.4 759.6 76.3 511.6 76.3z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>GitHub</h4>
+              <p>dan_bttn</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/dan-bitton-58a50b264/" target="_blank" class="contact-card card">
+            <div class="contact-card-icon">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM348.3 787.3H241.8V444h106.5v343.3zm-53.2-389.2c-34.1 0-61.7-27.6-61.7-61.7 0-34.1 27.6-61.7 61.7-61.7 34.1 0 61.7 27.6 61.7 61.7 0 34.1-27.6 61.7-61.7 61.7zm504.6 389.2H693.2V620c0-39.9-.7-91.2-55.6-91.2-55.6 0-64.1 43.5-64.1 88.3v170.2H467V444h102v46.9h1.4c14.2-26.9 48.9-55.3 100.7-55.3 107.7 0 127.7 70.9 127.7 163v188.7h.1z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>LinkedIn</h4>
+              <p>Dan Bitton</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 Dan Bitton. Tous droits réservés.</p>
+      <p class="footer-note">Portfolio moderne, performant et dynamique alimenté par l'API GitHub.</p>
     </div>
   </footer>
 

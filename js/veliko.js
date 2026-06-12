@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // === MOBILE MENU NAVIGATION ===
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('nav');
+    
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when clicking a link
+        const navLinksList = navMenu.querySelectorAll('a');
+        navLinksList.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    }
+
     // === SMOOTH SCROLL POUR LA NAVIGATION ===
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const headerHeight = document.querySelector('header')?.offsetHeight || 80;
@@ -81,6 +101,32 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === modal) {
             closeModalFunction();
         }
+    });
+
+    // === ACTIVE NAVIGATION LINKS ON SCROLL (SCROLL SPY) ===
+    const sections = document.querySelectorAll('section, footer');
+    const navMenuLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 150)) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navMenuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                link.classList.remove('active');
+                const decodedHref = decodeURIComponent(href);
+                if (decodedHref === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            }
+        });
     });
 
     // === EFFET SLIDE-IN POUR LE DÉFILEMENT ===
