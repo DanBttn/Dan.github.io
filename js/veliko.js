@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('open');
             navMenu.classList.toggle('open');
+            document.body.classList.toggle('nav-open');
         });
 
         // Close menu when clicking a link
@@ -15,6 +16,62 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('open');
                 navMenu.classList.remove('open');
+                document.body.classList.remove('nav-open');
+            });
+        });
+    }
+
+    // === HEADER SHADOW ON SCROLL ===
+    const siteHeader = document.querySelector('header');
+    if (siteHeader) {
+        const updateHeaderState = () => {
+            siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+        };
+        updateHeaderState();
+        window.addEventListener('scroll', updateHeaderState, { passive: true });
+    }
+
+    // === SCROLL PROGRESS BAR ===
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        const updateScrollProgress = () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+            scrollProgress.style.width = percent + '%';
+        };
+        updateScrollProgress();
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        window.addEventListener('resize', updateScrollProgress);
+    }
+
+    // === HERO CURSOR SPOTLIGHT ===
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection && window.matchMedia('(hover: hover)').matches) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            heroSection.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+            heroSection.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            heroSection.classList.add('spotlight-active');
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            heroSection.classList.remove('spotlight-active');
+        });
+    }
+
+    // === CARD TILT EFFECT ===
+    if (window.matchMedia('(hover: hover)').matches) {
+        const tiltElements = document.querySelectorAll('.card, .glass-card, .project-card, .version-item');
+        tiltElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                el.style.setProperty('--tilt-x', `${y * -5}deg`);
+                el.style.setProperty('--tilt-y', `${x * 5}deg`);
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.setProperty('--tilt-x', '0deg');
+                el.style.setProperty('--tilt-y', '0deg');
             });
         });
     }

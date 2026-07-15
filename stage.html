@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Stage - Dan Bitton</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+
+  <div class="scroll-progress" id="scroll-progress"></div>
 
   <!-- Background decorative elements -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   
-  <!-- Header unifié -->
-  <header class="glass-header">
-    <div class="logo">&lt;DanBitton /&gt;</div>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html#about">Accueil</a></li>
-        <li><a href="#presentation">Présentation</a></li>
-        <li><a href="#objectifPremiereAnnee">Objectif</a></li>
-        <li><a href="#realisationPremiereAnnee">Réalisation</a></li>
-        <li><a href="#bilan">Bilan</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-      <div class="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">Dan<span>.Bitton</span></a>
+      <button class="mobile-nav-toggle" aria-label="Menu de navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html#about">Accueil</a></li>
+          <li><a href="#presentation">Présentation</a></li>
+          <li><a href="#annee1">Année 1</a></li>
+          <li><a href="#annee2">Année 2</a></li>
+          <li><a href="#bilan">Bilan</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -54,76 +58,86 @@
 
 <section id="presentation">
   <div class="section-container">
-    <div class="glass-card slide-in">
-      <h2>Présentation de l'entreprise</h2>
-      <p>Voici l'entreprise dans laquelle j'ai effectué mon stage</p>
-      <br>
-      <p>• La Régie Immobilière de la Ville de Paris (RIVP) est une entreprise publique spécialisée dans le secteur de l'immobilier</p>
-      <br>
-      <a href="Pdf/RIVP.pdf" target="_blank" class="btn btn-primary">Voir la présentation RIVP</a>
+    <div class="section-header">
+      <span class="section-subtitle">L'entreprise</span>
+      <h2 class="section-title">Présentation de la RIVP</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="glass-card slide-in" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; padding: 32px;">
+      <div class="logo-wrapper" style="flex-shrink: 0; margin-bottom: 0;">
+        <img src="images/rivp.png" alt="Logo RIVP" loading="lazy" decoding="async">
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <p style="margin-bottom: 15px;">La <strong>Régie Immobilière de la Ville de Paris (RIVP)</strong> est une entreprise publique fondée en <strong>1923</strong>, spécialisée dans la construction et la gestion de logements à loyers modérés. Depuis 2007, la Ville de Paris en est l'actionnaire majoritaire, avec un objectif de 40&nbsp;% de logements abordables — dont 30&nbsp;% de logements sociaux — sur le territoire parisien.</p>
+        <p style="margin-bottom: 15px;">En 2016, la RIVP a absorbé la société <strong>HSF</strong> pour renforcer ses capacités de gestion et de développement. C'est aujourd'hui une grande entreprise de 1&nbsp;000 à 2&nbsp;000 salariés, gérant un vaste parc immobilier (logements, bureaux, locaux commerciaux) réparti sur l'Île-de-France.</p>
+        <p>C'est au sein de la <strong>DSI</strong> (Direction des Systèmes d'Information) que j'ai effectué mon stage sur deux années, en développement PHP connecté à une base de données Oracle.</p>
+      </div>
+    </div>
+    <div style="margin-top: 24px;">
+      <a href="Pdf/RIVP.pdf" target="_blank" class="btn btn-secondary">Voir la présentation complète</a>
     </div>
   </div>
 </section>
 
-<section id="objectifPremiereAnnee">
+<section id="annee1">
   <div class="section-container">
     <div class="section-header">
-      <span class="section-subtitle">Missions & Méthode</span>
-      <h2 class="section-title">Objectifs du stage</h2>
+      <span class="section-subtitle">Stage — 1ère année</span>
+      <h2 class="section-title">Objectifs & réalisations</h2>
       <div class="title-underline"></div>
     </div>
-    <div class="glass-card slide-in">
-      <h3>🎯 Objectifs principaux</h3>
+    <div class="glass-card slide-in" style="padding: 32px;">
+      <h3>Objectifs principaux</h3>
       <ul>
         <li><strong>Migration PHP</strong> : Passer de PHP 7.1 vers PHP 8.3 pour corriger les failles de sécurité</li>
         <li><strong>Optimisation</strong> : Simplification du code en modules et optimisation des requêtes</li>
         <li><strong>Versionning</strong> : Mise en place du contrôle de version du code</li>
       </ul>
-      
-      <h3 style="margin-top: 2rem;">📋 Méthodologie</h3>
+
+      <h3 style="margin-top: 2rem;">Méthodologie</h3>
       <ul>
         <li>Compréhension du besoin</li>
         <li>Mise en œuvre du projet (développement en PHP avec connexion à une base de données Oracle)</li>
         <li>Test et livraison du produit</li>
       </ul>
     </div>
+
+    <div class="skills-grid" style="margin-top: 30px; align-items: stretch;">
+      <div class="glass-card slide-in" style="padding: 32px; display: flex; flex-direction: column;">
+        <h3>Mission 1 — Doctoged</h3>
+        <p style="margin-bottom: 12px;">Chaque jour, les courriers envoyés aux locataires via la plateforme <strong>Simplissimo</strong> sont récupérés et stockés côté RIVP. S'ils contiennent une <em>ligne technique</em> reconnue, ils sont archivés automatiquement dans la GED (Gestion Électronique de Documents) ; sinon, ils sont redirigés vers Doctoged, l'application que j'ai reprise et migrée.</p>
+        <p style="margin-bottom: 12px;">Doctoged permet d'indexer ces documents (domaine, type, sous-type, référence de lot ou de contrat), de découper les fichiers de publipostage en documents individuels, puis de les envoyer en GED — avec, à chaque envoi réussi, une notification automatique par email au propriétaire du courrier.</p>
+        <p style="margin-bottom: 20px;">Mon rôle a porté sur la <strong>migration de PHP 7.1 vers PHP 8.3</strong> pour corriger des failles de sécurité, la <strong>refactorisation</strong> du code en modules plus lisibles, l'<strong>optimisation des requêtes</strong> vers la base Oracle et la mise en place du <strong>versionning Git</strong> sur un projet qui n'en disposait pas.</p>
+        <div style="margin-bottom: 20px;">
+          <img src="images/stage/doctoged-accueil.png" alt="Doctoged — écran d'accueil avec les 4 traitements disponibles" loading="lazy" decoding="async" class="zoomable" style="width: 100%; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block;">
+        </div>
+        <a href="Pdf/Doctoged_20230706.pdf" target="_blank" class="btn btn-secondary" style="margin-top: auto;">Voir la documentation complète</a>
+      </div>
+
+      <div class="glass-card slide-in" style="padding: 32px; display: flex; flex-direction: column;">
+        <h3>Mission 2 — Gestion des annexes</h3>
+        <p style="margin-bottom: 12px;">Chaque mois, la RIVP envoie à ses locataires un avis d'échéance de loyer accompagné d'annexes (notifications, justificatifs...), jointes au courrier papier ou à l'email. Ces annexes changent régulièrement, sans qu'il existe de système pour les tracer ni les rattacher automatiquement aux envois.</p>
+        <p style="margin-bottom: 12px;">J'ai conçu une interface permettant de <strong>créer une nouvelle annexe</strong> (code, libellé, date de prise en compte, fichier à joindre) ou de <strong>modifier le libellé</strong> d'une annexe existante, directement liée au processus d'envoi automatisé des emails.</p>
+        <p style="margin-bottom: 20px;">Résultat : les campagnes d'envoi peuvent désormais piocher directement le bon fichier sans reparamétrage manuel, avec une traçabilité complète de ce qui a été communiqué aux locataires mois après mois.</p>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+          <img src="images/stage/annexes-menu.png" alt="Gestion des annexes — menu de sélection" loading="lazy" decoding="async" class="zoomable" style="width: 50%; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block; object-fit: cover; height: 140px;">
+          <img src="images/stage/annexes-creation.png" alt="Gestion des annexes — formulaire de création" loading="lazy" decoding="async" class="zoomable" style="width: 50%; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block; object-fit: cover; height: 140px;">
+        </div>
+        <a href="Pdf/gestionannexes.pdf" target="_blank" class="btn btn-secondary" style="margin-top: auto;">Voir la documentation complète</a>
+      </div>
+    </div>
   </div>
 </section>
 
-
-<section id="realisationPremiereAnnee">
+<section id="annee2">
   <div class="section-container">
     <div class="section-header">
-      <span class="section-subtitle">Première année</span>
-      <h2 class="section-title">Réalisations</h2>
+      <span class="section-subtitle">Stage — 2ème année</span>
+      <h2 class="section-title">Objectifs & réalisations</h2>
       <div class="title-underline"></div>
     </div>
-    <div class="skills-grid">
-      <div class="glass-card slide-in">
-        <h3>📄 Mission 1 - Doctoged</h3>
-        <p>Développement et migration de l'application de gestion documentaire</p>
-        <a href="Pdf/Doctoged_20230706.pdf" target="_blank" class="btn btn-primary">Voir le rapport</a>
-      </div>
-      
-      <div class="glass-card slide-in">
-        <h3>📎 Mission 2 - Gestion Annexes</h3>
-        <p>Système de gestion des annexes et documents associés</p>
-        <a href="Pdf/gestionannexes.pdf" target="_blank" class="btn btn-primary">Voir le rapport</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="objectifDeuxiemeAnee">
-  <div class="section-container">
-    <div class="section-header">
-      <span class="section-subtitle">Deuxième année</span>
-      <h2 class="section-title">Objectifs principaux</h2>
-      <div class="title-underline"></div>
-    </div>
-    <div class="glass-card slide-in">
-      <h3>🖥️ Objectifs principaux</h3>
+    <div class="glass-card slide-in" style="padding: 32px;">
+      <h3>Objectifs principaux</h3>
       <ul>
         <li><strong>Interface de monitoring</strong> : Surveillance en temps réel des alertes liées aux services et applications critiques</li>
         <li><strong>Intégration IA</strong> : Interface avec Copilot Studio</li>
@@ -131,20 +145,18 @@
         <li><strong>API</strong> : Appels API avec retour JSON</li>
       </ul>
     </div>
-  </div>
-</section>
 
-<section id="realisationDeuxiemeAnnee">
-  <div class="section-container">
-    <div class="section-header">
-      <span class="section-subtitle">Deuxième année</span>
-      <h2 class="section-title">Réalisations</h2>
-      <div class="title-underline"></div>
-    </div>
-    <div class="glass-card slide-in" style="text-align: center;">
-      <h3>🎯 Mission globale</h3>
-      <p>Interface de monitoring complète avec intégration IA et automatisation</p>
-      <a href="Pdf/Interface_Monitoring.pdf" target="_blank" class="btn btn-primary">Voir le rapport complet</a>
+    <div class="glass-card slide-in" style="margin-top: 30px; padding: 32px;">
+      <h3>Mission globale — Interface de Monitoring</h3>
+      <p style="margin-bottom: 12px;">Cette interface surveille en temps réel les traitements et applications critiques de la RIVP : relances locataires (R1/R2), fichiers de cotation de la Mairie de Paris, commandes en attente dans l'ERP, événements CARL, échéances et écritures de l'Espace Locataire. Chaque widget affiche un statut (succès / alerte) avec la date du dernier traitement — certains interrogent une API tierce avec retour JSON, d'autres s'appuient sur des requêtes Oracle.</p>
+      <p style="margin-bottom: 12px;">Un onglet <strong>Logs</strong> centralise l'état de santé de chaque système (LDAP, Suivi Construction, ULIS...) avec un historique détaillé, ligne par ligne, consultable directement depuis l'interface. Une page <strong>Documentation</strong> associe à chaque alerte sa fiche technique — serveur, planificateur de tâche, périodicité, programme concerné — pour que l'équipe puisse retrouver rapidement l'origine d'un traitement en cas d'incident.</p>
+      <p style="margin-bottom: 20px;">J'ai également intégré un assistant conversationnel (<strong>RIVP-IA</strong>, propulsé par Microsoft Copilot Studio) capable de répondre aux questions courantes des collaborateurs — par exemple la procédure de changement de mot de passe — directement depuis le tableau de bord.</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+        <img src="images/stage/monitoring-dashboard.png" alt="Interface de Monitoring — tableau de bord des alertes" loading="lazy" decoding="async" class="zoomable" style="flex: 1; min-width: 260px; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block; object-fit: cover; height: 180px;">
+        <img src="images/stage/monitoring-logs.png" alt="Interface de Monitoring — état de santé des systèmes" loading="lazy" decoding="async" class="zoomable" style="flex: 1; min-width: 260px; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block; object-fit: cover; height: 180px;">
+        <img src="images/stage/monitoring-ia.png" alt="RIVP-IA — assistant conversationnel Copilot Studio" loading="lazy" decoding="async" class="zoomable" style="flex: 1; min-width: 260px; border-radius: 10px; border: 1px solid var(--border-color); cursor: zoom-in; display: block; object-fit: cover; height: 180px;">
+      </div>
+      <a href="Pdf/Interface_Monitoring.pdf" target="_blank" class="btn btn-secondary">Voir la documentation complète</a>
     </div>
   </div>
 </section>
@@ -156,14 +168,14 @@
       <h2 class="section-title">Bilan du stage</h2>
       <div class="title-underline"></div>
     </div>
-    <div class="glass-card slide-in">
-      <h3>✅ Compétences acquises</h3>
+    <div class="glass-card slide-in" style="padding: 32px;">
+      <h3>Compétences acquises</h3>
       <ul>
         <li><strong>Débogage</strong> : Apprentissage des techniques de résolution d'erreurs et recherche de solutions</li>
         <li><strong>PHP</strong> : Amélioration sur le langage PHP et compréhension des différences entre versions</li>
       </ul>
-      
-      <h3 style="margin-top: 2rem;">⚠️ Difficultés rencontrées</h3>
+
+      <h3 style="margin-top: 2rem;">Difficultés rencontrées</h3>
       <ul>
         <li><strong>Gestion des dates</strong> : Problèmes de format entre les formulaires et la base de données Oracle</li>
       </ul>
@@ -171,6 +183,14 @@
   </div>
 </section>
   </main>
+
+  <!-- Modal pour images (lightbox) -->
+  <div id="imageModal" class="modal" style="display: none">
+    <span class="close">&times;</span>
+    <span class="nav-button prev" style="left: 40px;">&#10094;</span>
+    <img class="modal-content" id="zoomedImage" alt="Zoomed Image">
+    <span class="nav-button next" style="right: 40px;">&#10095;</span>
+  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">

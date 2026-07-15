@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Invitation - Dan Bitton</title>
     <meta name="description" content="Découvrez le Projet Invitation de Dan Bitton, une application web interactive Flask de gestion de faire-part RSVP de mariage avec enveloppe 3D et tableur Excel via Pandas/OpenPyXL.">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+
+  <div class="scroll-progress" id="scroll-progress"></div>
 
   <!-- Background decorative elements -->
   <div class="blob blob-1"></div>
@@ -71,7 +73,7 @@
           <div class="title-underline"></div>
         </div>
         <div style="display: flex; align-items: center; justify-content: center; text-align: left; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
-          <img src="images/projet_invitation.jpg" alt="Faire-Part Elie & Noa" style="border-radius: 8px; max-width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" class="zoomable">
+          <img loading="lazy" decoding="async" src="images/projet_invitation.jpg" alt="Faire-Part Elie & Noa" style="border-radius: 8px; max-width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" class="zoomable">
           <div style="flex: 1; min-width: 300px; max-width: 650px;">
             <p style="margin-bottom: 15px;">L'objectif du <strong>Projet Invitation</strong> est de fournir une solution web interactive pour collecter les réponses des invités (RSVP) pour le mariage d'Elie & Noa. En remplacement des cartons d'invitation papier classiques, cette application propose une expérience utilisateur numérique et moderne.</p>
             <p style="margin-bottom: 15px;">Les convives accèdent à une page d'accueil présentant une enveloppe cachetée. Un clic sur celle-ci déclenche une animation 3D ouvrant le rabat et faisant glisser le faire-part personnalisé. L'utilisateur peut ensuite glisser (swipe) vers la gauche ou cliquer pour accéder au formulaire de confirmation.</p>
@@ -91,7 +93,7 @@
         </div>
         <div class="skills" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 30px;">
           <div class="skill slide-in">
-            <img src="images/python.png" alt="Python Logo">
+            <img loading="lazy" decoding="async" src="images/python.png" alt="Python Logo">
             <p>Python</p>
           </div>
           <div class="skill slide-in">
@@ -103,19 +105,19 @@
             <p>Flask</p>
           </div>
           <div class="skill slide-in">
-            <img src="images/html.png" alt="HTML Logo">
+            <img loading="lazy" decoding="async" src="images/html.png" alt="HTML Logo">
             <p>HTML5</p>
           </div>
           <div class="skill slide-in">
-            <img src="images/css.png" alt="CSS Logo">
+            <img loading="lazy" decoding="async" src="images/css.png" alt="CSS Logo">
             <p>CSS3</p>
           </div>
           <div class="skill slide-in">
-            <img src="images/javaScript.png" alt="JavaScript Logo">
+            <img loading="lazy" decoding="async" src="images/javaScript.png" alt="JavaScript Logo">
             <p>JavaScript</p>
           </div>
           <div class="skill slide-in">
-            <img src="images/github.png" alt="GitHub Logo">
+            <img loading="lazy" decoding="async" src="images/github.png" alt="GitHub Logo">
             <p>GitHub</p>
           </div>
           <div class="skill slide-in">
@@ -143,7 +145,7 @@
         <div class="projects-grid" style="margin-top: 30px;">
           
           <div class="glass-card slide-in" style="padding: 0;">
-            <img src="images/invitation_envelope.png" class="zoomable" alt="Enveloppe Fermée" style="border-radius: 8px 8px 0 0;">
+            <img loading="lazy" decoding="async" src="images/invitation_envelope.png" class="zoomable" alt="Enveloppe Fermée" style="border-radius: 8px 8px 0 0;">
             <div style="padding: 1.5rem;">
               <h3>1. Enveloppe d'Accueil</h3>
               <p>L'invité est accueilli par une enveloppe scellée contenant les prénoms des mariés.</p>
@@ -151,7 +153,7 @@
           </div>
           
           <div class="glass-card slide-in" style="padding: 0;">
-            <img src="images/invitation_card.png" class="zoomable" alt="Carte d'invitation" style="border-radius: 8px 8px 0 0;">
+            <img loading="lazy" decoding="async" src="images/invitation_card.png" class="zoomable" alt="Carte d'invitation" style="border-radius: 8px 8px 0 0;">
             <div style="padding: 1.5rem;">
               <h3>2. Ouverture du Faire-part</h3>
               <p>Le clic déclenche l'ouverture du rabat et la carte d'invitation glisse vers le haut.</p>
@@ -159,7 +161,7 @@
           </div>
           
           <div class="glass-card slide-in" style="padding: 0;">
-            <img src="images/invitation_form.png" class="zoomable" alt="Formulaire RSVP" style="border-radius: 8px 8px 0 0;">
+            <img loading="lazy" decoding="async" src="images/invitation_form.png" class="zoomable" alt="Formulaire RSVP" style="border-radius: 8px 8px 0 0;">
             <div style="padding: 1.5rem;">
               <h3>3. Formulaire de Présence</h3>
               <p>L'utilisateur saisit son nom, prénom, téléphone et valide le nombre de participants.</p>
@@ -210,7 +212,7 @@
   <div id="imageModal" class="modal" style="display: none">
     <span class="close">&times;</span>
     <span class="nav-button prev" style="left: 40px;">&#10094;</span>
-    <img class="modal-content" id="zoomedImage" alt="Zoomed Image">
+    <img loading="lazy" decoding="async" class="modal-content" id="zoomedImage" alt="Zoomed Image">
     <span class="nav-button next" style="right: 40px;">&#10095;</span>
   </div>
 
@@ -268,34 +270,5 @@
   </footer>
 
   <script src="js/veliko.js"></script>
-  <script>
-  window.addEventListener('load', function() {
-      const images = ['images/invitation_envelope.png', 'images/invitation_card.png', 'images/invitation_form.png'];
-      images.forEach(src => {
-          const img = new Image();
-          img.src = src;
-          img.onload = function() {
-              const canvas = document.createElement('canvas');
-              canvas.width = img.width;
-              canvas.height = img.height;
-              const ctx = canvas.getContext('2d');
-              ctx.drawImage(img, 0, 0);
-              let minX = canvas.width;
-              let maxX = 0;
-              for (let x = 0; x < canvas.width; x++) {
-                  for (let y = 0; y < canvas.height; y++) {
-                      const data = ctx.getImageData(x, y, 1, 1).data;
-                      const isBg = (Math.abs(data[0] - 251) < 15 && Math.abs(data[1] - 248) < 15 && Math.abs(data[2] - 243) < 15) || (data[0] > 250 && data[1] > 250 && data[2] > 250);
-                      if (!isBg) {
-                          if (x < minX) minX = x;
-                          if (x > maxX) maxX = x;
-                      }
-                  }
-              }
-              console.log("ANALYSIS_RESULT for " + src + ": minX=" + minX + ", maxX=" + maxX + ", width=" + canvas.width);
-          };
-      });
-  });
-  </script>
 </body>
 </html>

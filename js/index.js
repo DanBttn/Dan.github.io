@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const mobileToggle = document.querySelector('.mobile-nav-toggle');
     const navMenu = document.querySelector('nav');
-    
+
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('open');
             navMenu.classList.toggle('open');
+            document.body.classList.toggle('nav-open');
         });
 
         // Close menu when clicking a link
@@ -16,7 +17,145 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('open');
                 navMenu.classList.remove('open');
+                document.body.classList.remove('nav-open');
             });
+        });
+    }
+
+    // ==========================================
+    // HEADER SHADOW ON SCROLL
+    // ==========================================
+    const siteHeader = document.querySelector('header');
+    if (siteHeader) {
+        const updateHeaderState = () => {
+            siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+        };
+        updateHeaderState();
+        window.addEventListener('scroll', updateHeaderState, { passive: true });
+    }
+
+    // ==========================================
+    // SCROLL PROGRESS BAR
+    // ==========================================
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        const updateScrollProgress = () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+            scrollProgress.style.width = percent + '%';
+        };
+        updateScrollProgress();
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        window.addEventListener('resize', updateScrollProgress);
+    }
+
+    // ==========================================
+    // HERO CURSOR SPOTLIGHT
+    // ==========================================
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection && window.matchMedia('(hover: hover)').matches) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            heroSection.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+            heroSection.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            heroSection.classList.add('spotlight-active');
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            heroSection.classList.remove('spotlight-active');
+        });
+    }
+
+    // ==========================================
+    // CARD TILT EFFECT
+    // ==========================================
+    if (window.matchMedia('(hover: hover)').matches) {
+        const tiltElements = document.querySelectorAll('.card, .glass-card, .project-card, .version-item');
+        tiltElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                el.style.setProperty('--tilt-x', `${y * -5}deg`);
+                el.style.setProperty('--tilt-y', `${x * 5}deg`);
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.setProperty('--tilt-x', '0deg');
+                el.style.setProperty('--tilt-y', '0deg');
+            });
+        });
+    }
+
+    // ==========================================
+    // IMAGE LIGHTBOX (only runs if the page has a modal)
+    // ==========================================
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        const modalImg = document.getElementById('zoomedImage');
+        const closeModal = modal.querySelector('.close');
+        const prevButton = modal.querySelector('.prev');
+        const nextButton = modal.querySelector('.next');
+        const images = document.querySelectorAll('.zoomable');
+        let currentIndex = -1;
+
+        function openModal(index) {
+            currentIndex = index;
+            modal.style.display = 'flex';
+            modalImg.src = images[currentIndex].src;
+        }
+
+        function closeModalFunction() {
+            modal.style.display = 'none';
+        }
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            modalImg.src = images[currentIndex].src;
+        }
+
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            modalImg.src = images[currentIndex].src;
+        }
+
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => openModal(index));
+        });
+
+        closeModal.addEventListener('click', closeModalFunction);
+
+        nextButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showNextImage();
+        });
+
+        prevButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showPrevImage();
+        });
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModalFunction();
+            }
+        });
+    }
+
+    // ==========================================
+    // SLIDE-IN REVEAL ON SCROLL
+    // ==========================================
+    const slideElements = document.querySelectorAll('.slide-in');
+    if (slideElements.length > 0) {
+        const slideObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        slideElements.forEach(element => {
+            slideObserver.observe(element);
         });
     }
 
@@ -173,6 +312,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * Turns a raw repo slug (e.g. "projet-invitation") into a readable title
+ * ("Projet Invitation") without touching existing capitalization/acronyms.
+ */
+function formatRepoName(name) {
+    return name
+        .replace(/[-_]+/g, ' ')
+        .split(' ')
+        .filter(Boolean)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
+/**
  * Fetches public repositories from GitHub and renders them dynamically
  */
 async function fetchGitHubProjects() {
@@ -195,11 +347,16 @@ async function fetchGitHubProjects() {
         // Hide loading spinner
         loadingSpinner.style.display = 'none';
 
+        // Repos to keep out of the showcase even though they're public
+        // (test/throwaway repos that aren't representative of real work)
+        const hiddenRepos = ['bidon-'];
+
         // Filter: Only public, non-forked, and non-empty repositories, excluding the username profile repo
-        const filteredRepos = repositories.filter(repo => 
-            !repo.fork && 
+        const filteredRepos = repositories.filter(repo =>
+            !repo.fork &&
             repo.name.toLowerCase() !== githubUsername.toLowerCase() &&
-            repo.name !== 'danbttn'
+            repo.name !== 'danbttn' &&
+            !hiddenRepos.includes(repo.name)
         );
 
         if (filteredRepos.length === 0) {
@@ -248,15 +405,18 @@ async function fetchGitHubProjects() {
             // Card creation
             const card = document.createElement('div');
             card.className = 'project-card';
-            
+
+            const displayName = formatRepoName(repo.name);
+            const descriptionHtml = repo.description
+                ? `<p class="project-description">${repo.description}</p>`
+                : '';
+
             card.innerHTML = `
-                <div class="project-card-img-wrapper">
-                    <img src="https://opengraph.githubassets.com/1/DanBttn/${repo.name}" alt="${repo.name} Preview" class="project-card-img" onerror="this.onerror=null; this.src='images/portfolio.png';">
-                </div>
                 <div class="project-card-header">
-                    <div class="project-icon">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-dots">
+                        <span></span><span></span><span></span>
                     </div>
+                    <span class="project-icon" title="${repo.name}">${repo.name}</span>
                     <div class="project-stats">
                         <span class="stat-item" title="Stars">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-9.7-19.7-37.7-19.7-47.4 0L379.8 316.2l-253.9 36.9c-21.8 3.2-30.5 30-14.7 45.4l183.7 179.1-43.4 252.9c-3.7 21.7 19 38.2 38.5 28L512 739.9l222 116.8c19.5 10.2 42.2-6.3 38.5-28l-43.4-252.9 183.7-179.1c15.8-15.4 7.1-42.2-14.7-45.4zM512 654.5l-153.2 80.6 29.3-170.6-124-120.9 171.3-24.9 76.6-155.2 76.6 155.2 171.3 24.9-124 120.9 29.3 170.6L512 654.5z"></path></svg>
@@ -268,8 +428,10 @@ async function fetchGitHubProjects() {
                         </span>
                     </div>
                 </div>
-                <h4 class="project-title">${repo.name}</h4>
-                <p class="project-description">${repo.description || 'Pas de description fournie pour ce projet.'}</p>
+                <div class="project-card-body">
+                    <h4 class="project-title">${displayName}</h4>
+                    ${descriptionHtml}
+                </div>
                 <div class="project-card-footer">
                     ${languageBadge}
                     <span class="project-date">MàJ : ${pushedDate}</span>
@@ -285,7 +447,7 @@ async function fetchGitHubProjects() {
                     ` : ''}
                 </div>
             `;
-            
+
             gridContainer.appendChild(card);
         });
 
