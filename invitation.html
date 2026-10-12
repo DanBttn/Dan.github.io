@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+  <!-- Active le motion design (js/motion.js) sauf si l'utilisateur préfère réduire les animations -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('motion', 'motion-pending');
+      setTimeout(function () { document.documentElement.classList.remove('motion-pending'); }, 3000);
+    }
+  </script>
 </head>
 <body>
 
@@ -269,6 +276,10 @@
     </div>
   </footer>
 
-  <script src="js/veliko.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('open');
-            navMenu.classList.toggle('open');
-            document.body.classList.toggle('nav-open');
+            const isOpen = navMenu.classList.toggle('open');
+            document.body.classList.toggle('nav-open', isOpen);
+            // Smooth scroll (Lenis, see motion.js) is paused while the menu covers the page
+            if (isOpen) window.lenis?.stop();
+            else window.lenis?.start();
         });
 
         // Close menu when clicking a link
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileToggle.classList.remove('open');
                 navMenu.classList.remove('open');
                 document.body.classList.remove('nav-open');
+                window.lenis?.start();
             });
         });
     }
@@ -32,21 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         updateHeaderState();
         window.addEventListener('scroll', updateHeaderState, { passive: true });
-    }
-
-    // ==========================================
-    // SCROLL PROGRESS BAR
-    // ==========================================
-    const scrollProgress = document.getElementById('scroll-progress');
-    if (scrollProgress) {
-        const updateScrollProgress = () => {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const percent = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
-            scrollProgress.style.width = percent + '%';
-        };
-        updateScrollProgress();
-        window.addEventListener('scroll', updateScrollProgress, { passive: true });
-        window.addEventListener('resize', updateScrollProgress);
     }
 
     // ==========================================
@@ -66,26 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // CARD TILT EFFECT
-    // ==========================================
-    if (window.matchMedia('(hover: hover)').matches) {
-        const tiltElements = document.querySelectorAll('.card, .glass-card, .project-card, .version-item');
-        tiltElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                el.style.setProperty('--tilt-x', `${y * -5}deg`);
-                el.style.setProperty('--tilt-y', `${x * 5}deg`);
-            });
-            el.addEventListener('mouseleave', () => {
-                el.style.setProperty('--tilt-x', '0deg');
-                el.style.setProperty('--tilt-y', '0deg');
-            });
-        });
-    }
-
-    // ==========================================
     // IMAGE LIGHTBOX (only runs if the page has a modal)
     // ==========================================
     const modal = document.getElementById('imageModal');
@@ -101,10 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = index;
             modal.style.display = 'flex';
             modalImg.src = images[currentIndex].src;
+            window.lenis?.stop();
         }
 
         function closeModalFunction() {
             modal.style.display = 'none';
+            window.lenis?.start();
         }
 
         function showNextImage() {
@@ -137,25 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.target === modal) {
                 closeModalFunction();
             }
-        });
-    }
-
-    // ==========================================
-    // SLIDE-IN REVEAL ON SCROLL
-    // ==========================================
-    const slideElements = document.querySelectorAll('.slide-in');
-    if (slideElements.length > 0) {
-        const slideObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        slideElements.forEach(element => {
-            slideObserver.observe(element);
         });
     }
 
@@ -227,32 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // ==========================================
-    // SKILLS PROGRESS BAR ANIMATION ON SCROLL
-    // ==========================================
-    const progressLines = document.querySelectorAll('.progress-line');
-    
-    if (progressLines.length > 0) {
-        const progressObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const line = entry.target;
-                    const percent = line.getAttribute('data-percent');
-                    const fillSpan = line.querySelector('span');
-                    if (fillSpan) {
-                        fillSpan.style.width = percent;
-                    }
-                    // Stop observing once animated
-                    observer.unobserve(line);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        progressLines.forEach(line => {
-            progressObserver.observe(line);
-        });
-    }
 
     // ==========================================
     // CONTACT FORM VALIDATION & SUBMISSION
@@ -450,6 +376,11 @@ async function fetchGitHubProjects() {
 
             gridContainer.appendChild(card);
         });
+
+        // Lets motion.js animate the freshly injected cards
+        document.dispatchEvent(new CustomEvent('portfolio:content-added', {
+            detail: { elements: gridContainer.children }
+        }));
 
     } catch (error) {
         console.error('Error fetching repositories from GitHub:', error);

@@ -48,11 +48,18 @@ Ce document récapitule l'ensemble des consignes et améliorations demandées au
     *   Le script utilise la bibliothèque Pandas pour calculer dynamiquement le total général des personnes présentes et met à jour en temps réel la cellule `D2` via OpenPyXL.
     *   Une gestion des erreurs d'accès (`PermissionError`) a été intégrée pour avertir les utilisateurs si le fichier Excel est actuellement verrouillé ou ouvert par l'administrateur.
 
+### 7. Motion Design (GSAP & Lenis)
+*   **Consigne :** Refaire les animations du portfolio avec GSAP et Lenis.
+*   **Solution :**
+    *   Le site reste en HTML/CSS/JS natif (aucune étape de build, compatible GitHub Pages). Les librairies sont embarquées dans `js/vendor/` (GSAP 3.13, ScrollTrigger, Lenis 1.3).
+    *   Toute la logique d'animation est centralisée dans [js/motion.js](js/motion.js), chargé sur les quatre pages : défilement fluide Lenis synchronisé avec ScrollTrigger, intro du hero, titres révélés mot par mot, apparition des blocs au scroll, barres de compétences avec compteur, parallaxe, bandeau défilant réactif à la vitesse de scroll, inclinaison 3D des cartes et boutons magnétiques.
+    *   Si l'utilisateur a activé « réduire les animations » (ou si GSAP ne se charge pas), le site s'affiche directement dans son état final.
+
 ---
 
 ## 🛠️ Technologies Utilisées
 
 *   **Structure :** HTML5 sémantique.
 *   **Design & Layouts :** CSS3 natif (Flexbox, CSS Grid, Variables, Animations).
-*   **Dynamisme :** JavaScript (ES6+, Fetch API, Intersection Observer pour les animations au défilement).
+*   **Dynamisme :** JavaScript (ES6+, Fetch API), GSAP + ScrollTrigger et Lenis pour le motion design.
 *   **Backend (Invitation) :** Python 3, Flask, Pandas, OpenPyXL, Excel.

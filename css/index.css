@@ -29,7 +29,7 @@
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    --transition: all 0.4s var(--ease);
+    --transition: color 0.4s var(--ease), background-color 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), translate 0.4s var(--ease), scale 0.4s var(--ease);
 
     --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
     --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.45);
@@ -46,7 +46,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--border-hover) var(--bg-color);
 }
@@ -93,7 +92,9 @@ body::before {
     top: 0;
     left: 0;
     height: 3px;
-    width: 0%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     z-index: 200;
     pointer-events: none;
@@ -187,13 +188,12 @@ p {
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 32px;
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(0);
-    transition: transform 0.15s ease-out, border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
+    transition: var(--transition);
     box-shadow: none;
 }
 
 .card:hover {
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
+    translate: 0 -4px;
     border-color: var(--border-hover);
     box-shadow: var(--shadow);
 }
@@ -224,7 +224,7 @@ p {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    translate: 0 -2px;
     box-shadow: var(--shadow-glow);
     background: var(--primary-hover);
 }
@@ -239,7 +239,7 @@ p {
     background: var(--bg-card);
     border-color: var(--border-hover);
     color: #ffffff;
-    transform: translateY(-2px);
+    translate: 0 -2px;
 }
 
 .btn-sm {
@@ -362,7 +362,7 @@ nav ul li a.active {
     width: 22px;
     height: 2px;
     background-color: var(--text-main);
-    transition: var(--transition);
+    transition: transform 0.4s var(--ease), opacity 0.4s var(--ease);
 }
 
 /* ==========================================
@@ -670,6 +670,7 @@ body {
 
 section {
     padding: 110px 0;
+    scroll-margin-top: 70px;
 }
 
 .section-container {
@@ -885,7 +886,7 @@ section {
 }
 
 .skill-icon-card:hover {
-    transform: translateY(-3px);
+    translate: 0 -3px;
     border-color: var(--primary);
     background: var(--bg-card);
 }
@@ -923,30 +924,6 @@ section {
 /* ==========================================
    ANIMATIONS & SCROLL EFFECTS
    ========================================== */
-.slide-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-    will-change: transform, opacity;
-}
-
-.slide-in.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Staggered transition delays for skills */
-.skills .skill:nth-child(1) { transition-delay: 0.05s; }
-.skills .skill:nth-child(2) { transition-delay: 0.1s; }
-.skills .skill:nth-child(3) { transition-delay: 0.15s; }
-.skills .skill:nth-child(4) { transition-delay: 0.2s; }
-.skills .skill:nth-child(5) { transition-delay: 0.25s; }
-.skills .skill:nth-child(6) { transition-delay: 0.3s; }
-.skills .skill:nth-child(7) { transition-delay: 0.35s; }
-.skills .skill:nth-child(8) { transition-delay: 0.4s; }
-.skills .skill:nth-child(9) { transition-delay: 0.45s; }
-.skills .skill:nth-child(10) { transition-delay: 0.5s; }
-
 /* ==========================================
    SKILLS & LOGOS (PROJECT PAGES)
    ========================================== */
@@ -976,7 +953,7 @@ section {
 }
 
 .skill:hover {
-    transform: translateY(-3px);
+    translate: 0 -3px;
     border-color: var(--primary);
     background: var(--bg-card);
 }
@@ -1208,7 +1185,7 @@ section {
     background: var(--bg-card);
     border-color: var(--primary);
     color: var(--primary);
-    transform: translateY(-2px);
+    translate: 0 -2px;
 }
 
 /* ==========================================
@@ -1248,7 +1225,7 @@ section {
 }
 
 .featured-project-card:hover .featured-img-container img {
-    transform: scale(1.05);
+    scale: 1.05;
 }
 
 .project-tag {
@@ -1312,8 +1289,7 @@ section {
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 24px;
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-    transition: transform 0.15s ease-out, border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     min-height: 250px;
@@ -1740,7 +1716,7 @@ footer {
         height: calc(100dvh - 70px);
         background: var(--bg-color);
         z-index: 99;
-        transition: var(--transition);
+        transition: left 0.4s var(--ease);
         border-top: 1px solid var(--border-color);
         overflow-y: auto;
         padding-bottom: env(safe-area-inset-bottom, 20px);
@@ -2031,7 +2007,7 @@ footer {
 }
 
 .phone-frame:hover img {
-    transform: scale(1.03);
+    scale: 1.03;
 }
 
 /* ==========================================
@@ -2049,8 +2025,7 @@ footer {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-    transition: transform 0.15s ease-out, border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    transition: var(--transition);
     box-shadow: none;
     overflow: hidden;
     display: flex;
@@ -2072,7 +2047,7 @@ footer {
 }
 
 .glass-card:hover img {
-    transform: scale(1.03);
+    scale: 1.03;
 }
 
 .glass-card h3 {
@@ -2106,8 +2081,7 @@ footer {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-    transition: transform 0.15s ease-out, border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    transition: var(--transition);
     box-shadow: none;
     display: flex;
     flex-direction: column;
@@ -2137,7 +2111,7 @@ footer {
 }
 
 .version-item:hover img {
-    transform: scale(1.02);
+    scale: 1.02;
 }
 
 /* ==========================================
@@ -2263,10 +2237,6 @@ footer {
    ACCESSIBILITY: REDUCED MOTION
    ========================================== */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
     .marquee-track {
         animation: none;
     }
@@ -2277,10 +2247,64 @@ footer {
 
     .card, .glass-card, .project-card, .version-item {
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        transform: none !important;
+        translate: none;
     }
 
     .hero-section::before {
         display: none;
+    }
+}
+
+/* ==========================================
+   MOTION DESIGN (GSAP + LENIS) — voir js/motion.js
+   ========================================== */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+/* Sans Lenis (animations réduites / script absent), le navigateur gère le défilement doux */
+html:not(.lenis) {
+    scroll-behavior: smooth;
+}
+
+/* Le hero reste masqué jusqu'à ce que son animation d'entrée soit prête */
+.motion-pending header,
+.motion-pending .hero-section > * {
+    visibility: hidden;
+}
+
+/* Animations CSS remplacées par GSAP */
+.motion .marquee-track {
+    animation: none;
+    will-change: transform;
+}
+
+.motion .progress-line span {
+    transition: none;
+}
+
+/* Mots découpés : .w = masque, .wi = mot qui glisse dans le masque */
+.w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0.14em 0.04em;
+    margin: -0.14em -0.04em;
+}
+
+.wi {
+    display: inline-block;
+    will-change: transform;
+}
+
+.code-line {
+    display: block;
+    min-height: 1.6em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:not(.lenis) {
+        scroll-behavior: auto;
     }
 }
